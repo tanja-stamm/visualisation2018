@@ -34,7 +34,7 @@ public class Data {
         this.allPlayers = allPlayers;
     }
 
-    public Country[] getAllCountries() {
+    public static Country[] getAllCountries() {
         return allCountries;
     }
 
