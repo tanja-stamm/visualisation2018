@@ -6,6 +6,15 @@ public class Player {
     private int draftYear;
     private Country playerCountry;
 
+    Country Switzerland = new Country("Switzerland", 8000000);
+    Country USA = new Country("United States", 325000000);
+
+    Player p1 = new Player("Tanja", 1990, Switzerland);
+    Player p2 = new Player("Jelena", 1992, USA);
+
+
+
+
     public Player(String playerName, int draftYear, Country playerCountry) {
         this.playerName = playerName;
         this.draftYear = draftYear;
@@ -37,3 +46,4 @@ public class Player {
     }
 
 }
+
