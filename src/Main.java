@@ -6,7 +6,9 @@ import javafx.application.Application;
 import java.util.Arrays;
 
 import javafx.collections.FXCollections;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -14,6 +16,8 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
+import javafx.scene.effect.Glow;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -50,15 +54,24 @@ public class Main extends Application {
         // add starting data
         XYChart.Series<Number, String> series1 = new XYChart.Series<>();
         series1.setName("Data Series 1");
-        series1.getData().addAll(
-                new XYChart.Data<Number, String>(1, Data.getAllCountries()[0].getCountryName()),
-                new XYChart.Data<Number, String>(2, Data.getAllCountries()[1].getCountryName()),
-                new XYChart.Data<Number, String>(4, Data.getAllCountries()[2].getCountryName()),
-                new XYChart.Data<Number, String>(6, Data.getAllCountries()[3].getCountryName()));
+
+
+        for(int i = 0; i<=countryNames.length-1; i++){
+        XYChart.Data d = new XYChart.Data<Number, String>(10, Data.getAllCountries()[i].getCountryName());
+            series1.getData().add(d);
+        }
+
 
         chart.getData().add(series1);
+
+
+
+
         return chart;
     }
+
+
+
 
     public HBox createHeader() {
         HBox header = new HBox();
