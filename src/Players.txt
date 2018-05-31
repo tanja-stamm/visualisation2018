@@ -1,0 +1,1064 @@
+Player;BirthPlace;Year
+Dickie Boon;Canada;1899
+Joe Hall;United Kingdom;1902
+Ernie Russell;Canada;1904
+Frank Rankin;Canada;1904
+Tommy Smith;Canada;1905
+Harry Hyland;Canada;1908
+Harry Cameron;Canada;1912
+Eddie Lowrey;Canada;1912
+Clint Benedict;Canada;1912
+Bert Corbeau;Canada;1914
+Dave Ritchie;Canada;1914
+Jack Adams;Canada;1917
+Jack McDonald;Canada;1917
+Harry Meeking;Canada;1917
+Babe Dye;Canada;1919
+Bullet Joe Simpson;Canada;1921
+Billy Burch;United States;1922
+Ganton Scott;Canada;1922
+Aurèle Joliat;Canada;1922
+Howie Morenz;Canada;1923
+Johnny Gagnon;Canada;1923
+Shorty Green;Canada;1923
+Hap Day;Canada;1924
+Mike Neville;Canada;1924
+Jimmy Herbert;Canada;1924
+Werner Schnarr;Canada;1924
+Frank Ingram;Canada;1924
+Fred Gordon;Canada;1924
+Stan Brown;Canada;1925
+Stan McCabe;Canada;1926
+Eddie Shore;Canada;1926
+Alfie Moore;Canada;1926
+Albert Hughes;Canada;1926
+Larry Aurie;Canada;1926
+Ace Bailey;Canada;1926
+Doug Brennan;Canada;1926
+Jimmy Ward;Canada;1927
+Myles Lane;United States;1928
+Earl Robinson;Canada;1928
+Tiny Thompson;Canada;1928
+Frank Daley;Canada;1928
+Al Murray;Canada;1928
+Lawrence Northcott;Canada;1928
+George Owen;Canada;1928
+Benny Grant;Canada;1928
+Yip Foster;Canada;1929
+Ehrhardt Heller;Canada;1929
+Charlie Conacher;Canada;1929
+Busher Jackson;Canada;1929
+Alex Levinsky;United States;1930
+Bob Gracie;Canada;1930
+Art Alexandre;Canada;1931
+Bob Davis;Canada;1932
+Art Coulter;Canada;1932
+Bryan Hextall;Canada;1933
+Clarence Drouillard;Canada;1934
+Toe Blake;Canada;1934
+Bob Davidson;Canada;1934
+Art Jackson;Canada;1934
+Bill Cowley;Canada;1934
+Phil Bessler;Canada;1935
+Joe Cooper;Canada;1935
+Ray Getliffe;Canada;1935
+Bobby Bauer;Canada;1935
+Woody Dumart;Canada;1935
+Cully Dahlstrom;United States;1937
+Maurice Croghan;Canada;1937
+Ab DeMarco;Canada;1937
+Connie Dion;Canada;1937
+Oscar Aubuchon;Canada;1938
+George Allen;Canada;1938
+Larry Thibeault;Canada;1938
+Hank Goldup;Canada;1939
+Art Herchenratter;Canada;1940
+Clarence Behling;Canada;1940
+Ken Reardon;Canada;1940
+Joe Benoit;Canada;1940
+Elmer Lach;Canada;1940
+Fred Thurier;Canada;1940
+Bob Goldham;Canada;1941
+Chuck Rayner;Canada;1941
+Jack Schmidt;Canada;1942
+Bep Guidolin;Canada;1942
+Tony Bukovich;United States;1943
+Pentti Lund;Finland;1943
+Fernie Flaman;Canada;1943
+Joe Schmidt;Canada;1943
+Leo Reise Jr.;Canada;1945
+Howie Meeker;Canada;1946
+Fred Glover;Canada;1946
+Glen Smith;Canada;1948
+Bert Olmstead;Canada;1948
+Johnny Wilson;Canada;1949
+Earl Johnson;Canada;1949
+Larry Wilson;Canada;1949
+Paul Masnick;Canada;1949
+Marcel Pronovost;Canada;1949
+Len Haley;Canada;1950
+Don Simmons;Canada;1951
+Jim Bartlett;Canada;1951
+Leo Boivin;Canada;1951
+Earl Balfour;Canada;1952
+Andy Bathgate;Canada;1952
+Ron Stewart;Canada;1952
+Warren Godfrey;Canada;1952
+Claude Pronovost;Canada;1952
+Bill McCreary Sr.;Canada;1953
+Hank Bassen;Canada;1954
+Marc Reaume;Canada;1954
+Ed Diachuk;Canada;1955
+Aut Erickson;Canada;1955
+Tom McCarthy;Canada;1955
+Henri Richard;Canada;1955
+Gilles Tremblay;Canada;1956
+Cummy Burton;Canada;1956
+Ulf Sterner;Sweden;1956
+Mel Pearson;Canada;1957
+Murray Balfour;Canada;1957
+Bob Nevin;Canada;1957
+Les Hunt;Canada;1957
+Gene Ubriaco;Canada;1958
+Lloyd Haddon;Canada;1958
+Bryan Hextall Jr.;Canada;1958
+Len Lunde;Canada;1958
+Howie Glover;Canada;1958
+Gilles Boisvert;Canada;1959
+Dave Balon;Canada;1959
+Eddie Giacomin;Canada;1959
+Vic Hadfield;Canada;1959
+Cesare Maniago;Canada;1960
+Red Armstrong;Canada;1960
+Keith McCreary;Canada;1961
+Ed Westfall;Canada;1961
+Jim Neilson;Canada;1962
+Gilles Villemure;Canada;1963
+Ernie Hicke;Canada;1963
+Bill Goldsworthy;Canada;1964
+Dennis Hull;Canada;1964
+Wally Boyer;Canada;1965
+Ray Cullen;Canada;1965
+Ron Huston;Canada;1965
+Gary Smith;Canada;1965
+Jim Krulicki;Canada;1966
+Tracy Pratt;United States;1967
+Bobby Schmautz;Canada;1967
+Barry Gibbs;Canada;1967
+Rosaire Paiement;Canada;1967
+Frank St. Marseille;Canada;1967
+George Konik;Canada;1967
+Larry Pleau;United States;1968
+Rick Ley;Canada;1968
+Len Fontaine;Canada;1968
+John Marks;Canada;1968
+Moe L'Abbé;Canada;1968
+Guy Lapointe;Canada;1968
+Michel Plasse;Canada;1968
+Rick Smith;Canada;1968
+Timo Turunen;Finland;1969
+Nick Harbaruk;Poland;1969
+Gilles Gilbert;Canada;1969
+Steve Andrascik;Canada;1969
+Brian Spencer;Canada;1969
+Dan Bouchard;Canada;1970
+Ron Busniuk;Canada;1970
+Larry Romanchych;Canada;1970
+Fred Barrett;Canada;1970
+Robin Burns;Canada;1970
+Gerry O'Flaherty;United States;1971
+Jerry Korab;Canada;1971
+Marcel Dionne;Canada;1971
+Guy Lafleur;Canada;1971
+Bob Stewart;Canada;1971
+Garry Howatt;Canada;1972
+George Ferguson;Canada;1972
+Don Lever;Canada;1972
+Gregg Sheppard;Canada;1972
+Marty Howe;United States;1973
+Nelson Pyatt;Canada;1973
+Blaine Stoughton;Canada;1973
+André Savard;Canada;1973
+Dean Talafous;United States;1974
+Danny Gare;Canada;1974
+Paul Baxter;Canada;1974
+Clark Gillies;Canada;1974
+Mike Rogers;Canada;1974
+Wilf Paiement;Canada;1974
+Bryan Trottier;Canada;1975
+Barry Dean;Canada;1975
+Gordon Laxton;Canada;1975
+John Tonelli;Canada;1975
+Rick Blight;Canada;1975
+Peter Helander;Sweden;1975
+Greg Fox;Canada;1976
+Brian Sutter;Canada;1976
+Don Murdoch;Canada;1976
+Bob Sauvé;Canada;1976
+Rob Tudor;Canada;1976
+Ron Wilson;Canada;1976
+Roy Sommer;United States;1977
+Kevin Primeau;Canada;1977
+Mike Bossy;Canada;1977
+Ron Duguay;Canada;1977
+Barry Beck;Canada;1977
+Al Secord;Canada;1978
+Drew Callander;Canada;1978
+Bill Derlago;Canada;1978
+Greg Millen;Canada;1978
+Bobby Smith;Canada;1978
+Glen Cochrane;Canada;1978
+Jyrki Seppä;Finland;1979
+Lindy Ruff;Canada;1979
+Greg Theberge;Canada;1979
+Mike Foligno;Canada;1979
+Jim Dobson;Canada;1979
+Dave Silk;United States;1980
+Neal Broten;United States;1980
+Ken Morrow;United States;1980
+Petteri Lehto;Finland;1980
+John Barrett;Canada;1980
+Denis Cyr;Canada;1980
+Dino Ciccarelli;Canada;1980
+Glenn Anderson;Canada;1980
+Marc Chorney;Canada;1980
+Walt Poddubny;Canada;1980
+Jim Malone;Canada;1980
+Normand Rochefort;Canada;1980
+Andy Moog;Canada;1980
+Bobby Carpenter;United States;1981
+Mark Hunter;Canada;1981
+Ernie Godden;Canada;1981
+Jim Nill;Canada;1981
+Gord Hampson;Canada;1981
+Andy Schliebener;Canada;1981
+Carey Wilson;Canada;1981
+Kevin McClelland;Canada;1981
+Garth Butcher;Canada;1981
+Doug Shedden;Canada;1981
+Greg Gilbert;Canada;1981
+Perry Anderson;Canada;1981
+Corrado Micalef;Canada;1981
+Randy Hillier;Canada;1981
+Ville Sirén;Finland;1982
+Sylvain Côté;Canada;1982
+Frank Caprice;Canada;1982
+Paul Boutilier;Canada;1982
+Gord Kluzak;Canada;1982
+Mike Vernon;Canada;1982
+Ken Leiter;United States;1983
+Ken Daneyko;Canada;1983
+Todd Bergen;Canada;1983
+Jim Playfair;Canada;1983
+Claude Lemieux;Canada;1983
+Calle Johansson;Sweden;1983
+Wayne Presley;United States;1984
+David Ellett;United States;1984
+Craig Coxe;United States;1984
+Daryl Reaugh;Canada;1984
+Marc Bergevin;Canada;1984
+Grant Ledyard;Canada;1984
+Dave Gagner;Canada;1984
+John Carter;United States;1985
+Larry DePalma;United States;1985
+Jyrki Lumme;Finland;1985
+Kevin Evans;Canada;1985
+Dan Hodgson;Canada;1985
+Randy Burridge;Canada;1985
+Brian Skrudland;Canada;1985
+Shane Churla;Canada;1985
+Bob Halkidis;Canada;1985
+Bill Ranford;Canada;1985
+Glenn Healy;Canada;1985
+Craig Simpson;Canada;1985
+Cliff Ronning;Canada;1985
+Ulf Dahlén;Sweden;1985
+Bob Sweeney;United States;1986
+Vincent Damphousse;Canada;1986
+Doug Houda;Canada;1986
+Jim Agnew;Canada;1986
+Norm Maciver;Canada;1986
+Scott Mellanby;Canada;1986
+Robert Dirk;Canada;1986
+Benoît Hogue;Canada;1986
+Philippe Bozon;France;1986
+Olie Sundström;Sweden;1986
+Brian Noonan;United States;1987
+Brian Leetch;United States;1987
+Peter Taglianetti;United States;1987
+Todd Okerlund;United States;1987
+Craig Janney;United States;1987
+Mike Hudson;Canada;1987
+Eric Germain;Canada;1987
+Sylvain Lefebvre;Canada;1987
+Geoff Smith;Canada;1987
+Ken Baumgartner;Canada;1987
+Troy Crowder;Canada;1987
+Shaun Van Allen;Canada;1987
+Kevin Kaminski;Canada;1987
+Luke Richardson;Canada;1987
+Dave Archibald;Canada;1987
+Ronnie Stern;Canada;1987
+Brent Gilchrist;Canada;1987
+Mario Brunetta;Canada;1987
+Robert Nordmark;Sweden;1987
+Darren Turcotte;United States;1988
+Tony Granato;United States;1988
+Doug Weiss;United States;1988
+Mike McHugh;United States;1988
+Jack Capuano;United States;1988
+Rich Pilon;Canada;1988
+Randy McKay;Canada;1988
+Bob Joyce;Canada;1988
+Trevor Linden;Canada;1988
+Don Sweeney;Canada;1988
+Tim Cheveldae;Canada;1988
+Bruce Racine;Canada;1988
+Benoît Brunet;Canada;1988
+Leif Rohlin;Sweden;1988
+Peter Popovic;Sweden;1988
+Mike Modano;United States;1989
+Bob Beers;United States;1989
+Paul Broten;United States;1989
+Jamie Leach;Canada;1989
+Blair Atcheynum;Canada;1989
+André Racicot;Canada;1989
+Rob Blake;Canada;1989
+Peter Ing;Canada;1989
+Tim Taylor;Canada;1989
+Lyle Odelein;Canada;1989
+Sheldon Kennedy;Canada;1989
+Kris Draper;Canada;1989
+Dan Keczmer;United States;1990
+Lance Pitlick;United States;1990
+Scott Lachance;United States;1990
+Jere Lehtinen;Finland;1990
+Owen Nolan;United Kingdom;1990
+Mike Needham;Canada;1990
+Scott Thornton;Canada;1990
+Stéphane Fiset;Canada;1990
+Stéphane Matteau;Canada;1990
+Sean Whyte;Canada;1990
+Brent Thompson;Canada;1990
+Paul Kruse;Canada;1990
+Michel Picard;Canada;1990
+Gino Odjick;Canada;1990
+Scott King;Canada;1990
+Dean Malkoc;Canada;1990
+Frank Breault;Canada;1990
+Kevin Dean;United States;1991
+Jim Dowd;United States;1991
+Doug Weight;United States;1991
+Ted Donato;United States;1991
+Bill Guerin;United States;1991
+Kimmo Timonen;Finland;1991
+Jason York;Canada;1991
+Patrice Brisebois;Canada;1991
+Wes Walz;Canada;1991
+Martin Brodeur;Canada;1991
+Sean O'Donnell;Canada;1991
+Scott Scissons;Canada;1991
+Darryl Sydor;Canada;1991
+Niklas Sundström;Sweden;1991
+Steve Heinze;United States;1992
+Saku Koivu;Finland;1992
+Fredrik Norrena;Finland;1992
+Jarkko Varvio;Finland;1992
+Miroslav Satan;Slovakia;1992
+Darren McCarty;Canada;1992
+Tyler Wright;Canada;1992
+Mark Ouimet;Canada;1992
+Peter Ambroziak;Canada;1992
+Richard Matvichuk;Canada;1992
+Dixon Ward;Canada;1992
+Matthew Barnaby;Canada;1992
+Grant Marshall;Canada;1992
+Darrin Madeley;Canada;1992
+Martin Lapointe;Canada;1992
+Daniel Alfredsson;Sweden;1992
+Todd Marchant;United States;1993
+Aaron Miller;United States;1993
+Ian Moran;United States;1993
+David Roberts;United States;1993
+Nathan LaFayette;Canada;1993
+Cale Hulse;Canada;1993
+Jason Dawe;Canada;1993
+Chris Pronger;Canada;1993
+Marcel Cousineau;Canada;1993
+Chris Gratton;Canada;1993
+Jason Smith;Canada;1993
+Cory Stillman;Canada;1993
+Michael Peca;Canada;1993
+Aaron Ward;Canada;1993
+Ryan VandenBussche;Canada;1993
+Mattias Norström;Sweden;1993
+Joe Dziedzic;United States;1994
+Miikka Kiprusoff;Finland;1994
+Sami Salo;Finland;1994
+Greg de Vries;Canada;1994
+Scott Nichol;Canada;1994
+Éric Dazé;Canada;1994
+Brian Wiseman;Canada;1994
+Adrian Aucoin;Canada;1994
+Patrick Lalime;Canada;1994
+Todd Harvey;Canada;1994
+Nathan Dempsey;Canada;1994
+Olli Jokinen;Finland;1995
+Rhett Warrener;Canada;1995
+Wayne Primeau;Canada;1995
+Daymond Langkow;Canada;1995
+Harry York;Canada;1995
+Frederik Beaubien;Canada;1995
+Todd Bertuzzi;Canada;1995
+Bryan McCabe;Canada;1995
+Jeff O'Neill;Canada;1995
+Kevin Weekes;Canada;1995
+Mike Grier;United States;1996
+Ryan Bach;Canada;1996
+Wade Belak;Canada;1996
+Jay McKee;Canada;1996
+Rocky Thompson;Canada;1996
+Daniel Goneau;Canada;1996
+Eric Cairns;Canada;1996
+Jamal Mayers;Canada;1996
+Kristian Huselius;Sweden;1996
+Erik Rasmussen;United States;1997
+Hal Gill;United States;1997
+Thomas Ziegler;Switzerland;1997
+Jean-Sébastien Giguère;Canada;1997
+Derek Morris;Canada;1997
+Brendan Morrison;Canada;1997
+Shawn Thornton;Canada;1997
+Martin St. Louis;Canada;1997
+Marc Denis;Canada;1997
+Henrik Tallinder;Sweden;1997
+Chris Drury;United States;1998
+Tom Poti;United States;1998
+Roberto Luongo;Canada;1998
+Arron Asham;Canada;1998
+Jonathan Girard;Canada;1998
+Eric Brewer;Canada;1998
+Reed Low;Canada;1998
+Kyle Freadrich;Canada;1998
+Matt Cooke;Canada;1998
+Jason Blake;United States;1999
+David Legwand;United States;1999
+David Tanabe;United States;1999
+Robyn Regehr;Brazil;1999
+Tuomo Ruutu;Finland;1999
+Mike Ribeiro;Canada;1999
+Alex Tanguay;Canada;1999
+Brad Stuart;Canada;1999
+Mike Van Ryn;Canada;1999
+Brad Ference;Canada;1999
+Johan Franzén;Sweden;1999
+Johnny Oduya;Sweden;1999
+Erik Cole;United States;2000
+Brad Richards;Canada;2000
+Andrew Peters;Canada;2000
+John Erskine;Canada;2000
+Willie Mitchell;Canada;2000
+Scott Hartnell;Canada;2000
+Trent Hunter;Canada;2000
+Justin Williams;Canada;2000
+Mathieu Darche;Canada;2000
+Shawn Horcoff;Canada;2000
+Michael Ryder;Canada;2000
+Krys Barch;Canada;2000
+Carl Corazzini;United States;2001
+Ron Hainsey;United States;2001
+Sean Bergenheim;Finland;2001
+Dan Blackburn;Canada;2001
+Kent Huskins;Canada;2001
+Chris Neil;Canada;2001
+Stéphane Veilleux;Canada;2001
+Nick Schultz;Canada;2001
+Derek MacKenzie;Canada;2001
+Mike Komisarek;United States;2002
+Ryan Miller;United States;2002
+Pascal Leclaire;Canada;2002
+Tyler Sloan;Canada;2002
+Marc-André Bergeron;Canada;2002
+Brad Boyes;Canada;2002
+Carlo Colaiacovo;Canada;2002
+Steve Ott;Canada;2002
+Alexandre Burrows;Canada;2002
+Jason Pominville;Canada;2002
+Travis Moen;Canada;2002
+Ray Emery;Canada;2002
+Andrew Ianiero;Canada;2002
+Fredrik Johansson;Sweden;2002
+Tim Gleason;United States;2003
+Chris Higgins;United States;2003
+Karri Rämö;Finland;2003
+Jay McClement;Canada;2003
+Eric Staal;Canada;2003
+Drew MacIntyre;Canada;2003
+Kyle Wellwood;Canada;2003
+Gregory Campbell;Canada;2003
+Ryane Clowe;Canada;2003
+Nathan Horton;Canada;2003
+Dan Ellis;Canada;2003
+Shane O'Brien;Canada;2003
+Nicklas Grossmann;Sweden;2003
+Martin Samuelsson;Sweden;2003
+Douglas Murray;Sweden;2003
+Ryan Vesce;United States;2004
+James Wisniewski;United States;2004
+R. J. Umberger;United States;2004
+Jan Zapletal;Czech Republic;2004
+Yann Danis;Canada;2004
+Chris Kelly;Canada;2004
+Rene Bourque;Canada;2004
+Brooks Laich;Canada;2004
+Thomas Vanek;Austria;2004
+Emil Axelsson;Sweden;2004
+Chris Bourque;United States;2005
+Mike Brown;United States;2005
+Mike McKenna;United States;2005
+Jimmy Howard;United States;2005
+Matt Carle;United States;2005
+B. J. Crombeen;United States;2005
+Eric Nystrom;United States;2005
+David Skokan;Slovakia;2005
+Philip Larsen;Denmark;2005
+Mike Mole;Canada;2005
+Pierre-Luc Létourneau-Leblond;Canada;2005
+Steve Bernier;Canada;2005
+Dion Phaneuf;Canada;2005
+Clarke MacArthur;Canada;2005
+Bracken Kearns;Canada;2005
+David Clarkson;Canada;2005
+Mike Richards;Canada;2005
+Brandon Prust;Canada;2005
+Zack Stortini;Canada;2005
+Warren Peters;Canada;2005
+Dustin Penner;Canada;2005
+Carl Gunnarsson;Sweden;2005
+Tony Lagerström;Sweden;2005
+Mark Stuart;United States;2006
+Jaime Sifers;United States;2006
+Stephen Gionta;United States;2006
+Peter Harrold;United States;2006
+David Booth;United States;2006
+Ryan Carter;United States;2006
+Drew Miller;United States;2006
+Keith Yandle;United States;2006
+Luca Sbisa;Italy;2006
+Bryan Bickell;Canada;2006
+Greg Stewart;Canada;2006
+Kris Versteeg;Canada;2006
+Jordan Staal;Canada;2006
+John Scott;Canada;2006
+Tom Pyatt;Canada;2006
+Mike Blunden;Canada;2006
+Cédrick Desjardins;Canada;2006
+Cal O'Reilly;Canada;2006
+Matt Stefanishion;Canada;2006
+Adam Berti;Canada;2006
+Cody Bass;Canada;2006
+Mike Weber;United States;2007
+David Rohlfs;United States;2007
+Mike Morris;United States;2007
+Joe Santilli;United States;2007
+Brian Boyle;United States;2007
+Peter Mueller;United States;2007
+Derek Ryan;United States;2007
+Jack Skille;United States;2007
+Travis Morin;United States;2007
+Bobby Ryan;United States;2007
+Ethan Graham;United States;2007
+Borna Rendulic;Croatia;2007
+Evgeny Kuznetsov;Russia;2007
+Jannik Hansen;Denmark;2007
+Bryan Little;Canada;2007
+Chris Porter;Canada;2007
+Chris Stewart;Canada;2007
+Steve Downie;Canada;2007
+Trevor Smith;Canada;2007
+Cody Franson;Canada;2007
+Derick Brassard;Canada;2007
+Pierre-Cédric Labrie;Canada;2007
+Mark Fistric;Canada;2007
+Andrew Bodnarchuk;Canada;2007
+Micheal Haley;Canada;2007
+Derek Dorsett;Canada;2007
+Sam Gagner;Canada;2007
+Tyler Kennedy;Canada;2007
+Jean-Claude Sawyer;Canada;2007
+Martin Lundberg;Sweden;2007
+Magnus Pääjärvi;Sweden;2007
+Marcus Johansson;Sweden;2007
+Chris Butler;United States;2008
+Brandon Sutter;United States;2008
+Jeff Prough;United States;2008
+Chris Mueller;United States;2008
+Yannick Weber;Switzerland;2008
+Sven Bärtschi;Switzerland;2008
+Andrew Campbell;Canada;2008
+Michael Kostka;Canada;2008
+Ian McKenzie;Canada;2008
+Scott Jackson;Canada;2008
+Brett MacLean;Canada;2008
+Jesse Winchester;Canada;2008
+Jason Garrison;Canada;2008
+Grant Clitsome;Canada;2008
+Yanni Gourde;Canada;2008
+Matt Corrente;Canada;2008
+Zach Boychuk;Canada;2008
+Zack Smith;Canada;2008
+Shawn Matthias;Canada;2008
+Justin Falk;Canada;2008
+Chris Terry;Canada;2008
+Jason Demers;Canada;2008
+Mathieu Perreault;Canada;2008
+Matthew Halischuk;Canada;2008
+Dana Tyrell;Canada;2008
+Frazer McLaren;Canada;2008
+Erik Karlsson;Sweden;2008
+Jakob Silfverberg;Sweden;2008
+Jim O'Brien;United States;2009
+Joe Vitale;United States;2009
+Tom McCollum;United States;2009
+Erik Condra;United States;2009
+Brian Lashoff;United States;2009
+Eric Tangradi;United States;2009
+Brian Strait;United States;2009
+Tyler Myers;United States;2009
+Dennis McCauley;United States;2009
+Alec Richards;United States;2009
+Richard Bachman;United States;2009
+Adam Vay;Hungary;2009
+Dean Kukan;Switzerland;2009
+Joel Vermin;Switzerland;2009
+Patrick Bjorkstrand;Denmark;2009
+Nicklas Jensen;Denmark;2009
+Paul Postma;Canada;2009
+Marco Scandella;Canada;2009
+Cody Hodgson;Canada;2009
+Maxime Tanguay;Canada;2009
+Alex Grant;Canada;2009
+Andrew MacWilliam;Canada;2009
+Thomas Hickey;Canada;2009
+Anthony Peluso;Canada;2009
+Kevin Marshall;Canada;2009
+Colton Sceviour;Canada;2009
+Victor Bartley;Canada;2009
+Zach Sill;Canada;2009
+Mitch Fadden;Canada;2009
+Tyler Ennis;Canada;2009
+Michael Liambas;Canada;2009
+Dustin Tokarski;Canada;2009
+Guillaume Monast;Canada;2009
+Luke Gazdic;Canada;2009
+JC Lipon;Canada;2009
+Victor Oreskovich;Canada;2009
+Brent Regner;Canada;2009
+Brett Gallant;Canada;2009
+Jesper Fast;Sweden;2009
+Adam Larsson;Sweden;2009
+Jonas Brodin;Sweden;2009
+Adam Pettersson;Sweden;2009
+Calle Järnkrok;Sweden;2009
+Tim Heed;Sweden;2009
+Jonas Gunnarsson;Sweden;2009
+Dennis Rasmussen;Sweden;2009
+Marcus Krüger;Sweden;2009
+Max Friberg;Sweden;2009
+Gabriel Landeskog;Sweden;2009
+Magnus Hellberg;Sweden;2009
+J. T. Brown;United States;2010
+Jeremy Morin;United States;2010
+Corey Tropp;United States;2010
+Ben Holmstrom;United States;2010
+Mat Clark;United States;2010
+Tim Bozon;United States;2010
+Matt Bartkowski;United States;2010
+Jerry D'Amigo;United States;2010
+Jordan Schroeder;United States;2010
+Steven Kampfer;United States;2010
+Dylan Olsen;United States;2010
+Nate Prosser;United States;2010
+Ben Smith;United States;2010
+James Marcou;United States;2010
+Tomas Hyka;Czech Republic;2010
+Joel Armia;Finland;2010
+Markus Granlund;Finland;2010
+Miikka Salomäki;Finland;2010
+Nikita Gusev;Russia;2010
+Andrei Vasilevskiy;Russia;2010
+Roman Lyubimov;Russia;2010
+Brendan Smith;Canada;2010
+Zac Dalpe;Canada;2010
+Colin Greening;Canada;2010
+Ben Chiarot;Canada;2010
+Jean-Sébastien Bérubé;Canada;2010
+Ryan Stanton ;Canada;2010
+Jared Spurgeon;Canada;2010
+Gabriel Bourque;Canada;2010
+Matt Hackett;Canada;2010
+Andrew Agozzino;Canada;2010
+Matt Irwin;Canada;2010
+Edward Pasquale;Canada;2010
+Dustin Stevenson;Canada;2010
+Stefan Schneider;Canada;2010
+Mike Hoffman;Canada;2010
+Alex Biega;Canada;2010
+Jared Cowen;Canada;2010
+Jordan Caron;Canada;2010
+Chris DiDomenico;Canada;2010
+Chris Breen;Canada;2010
+David Savard;Canada;2010
+Kevin Poulin;Canada;2010
+Gabriel Dumont;Canada;2010
+Cody Goloubef;Canada;2010
+Ben Street;Canada;2010
+Jordan Szwarz;Canada;2010
+Harry Zolnierczyk;Canada;2010
+Antoine Roussel;France;2010
+Fredrik Claesson;Sweden;2010
+Johan Larsson;Sweden;2010
+Petter Granberg;Sweden;2010
+Tom Nilsson;Sweden;2010
+Joakim Nordström;Sweden;2010
+Linus Hultström;Sweden;2010
+Victor Rask;Sweden;2010
+Mattias Bäckman;Sweden;2010
+Marcus Sörensen;Sweden;2010
+Vincent LoVerde;United States;2011
+Joe Cannata;United States;2011
+Sena Acolatse;United States;2011
+Craig Smith;United States;2011
+Mike Sislo;United States;2011
+Tyler Johnson;United States;2011
+Mitch Callahan;United States;2011
+Joe Whitney;United States;2011
+Austin Watson;United States;2011
+Ben Ryan;United States;2011
+Robbie Russo;United States;2011
+Henrik Samuelsson;United States;2011
+Markus Hännikäinen;Finland;2011
+Artturi Lehkonen;Finland;2011
+Henri Ikonen;Finland;2011
+Steffen Soberg;Norway;2011
+Nikita Nesterov;Russia;2011
+Nikita Kucherov;Russia;2011
+Anton Slepyshev;Russia;2011
+Christoph Bertschy;Switzerland;2011
+Nick Sörensen;Denmark;2011
+Derek Grant;Canada;2011
+Ryan Ellis;Canada;2011
+Nicolas Deslauriers;Canada;2011
+Garrett Mitchell;Canada;2011
+Christian Thomas;Canada;2011
+Zack Kassian;Canada;2011
+Mike Halmo;Canada;2011
+Justin Dowling;Canada;2011
+Philip Varone;Canada;2011
+Linden Vey;Canada;2011
+Erik Gudbranson;Canada;2011
+Tanner House;Canada;2011
+Steve Rucchin;Canada;2011
+Landon Ferraro;Canada;2011
+Craig Cunningham;Canada;2011
+Cory Conacher;Canada;2011
+Riley Sheahan;Canada;2011
+Dalton Prout;Canada;2011
+Tye McGinn;Canada;2011
+André Burakovsky;Austria;2011
+Max Görtz;Sweden;2011
+Christian Djoos;Sweden;2011
+Ludvig Byström;Sweden;2011
+Viktor Lööv;Sweden;2011
+Linus Ullmark;Sweden;2011
+William Karlsson;Sweden;2011
+Viktor Arvidsson;Sweden;2011
+Philip Samuelsson;Sweden;2011
+Pontus Aberg;Sweden;2011
+Tommy Cross;United States;2012
+Jason Zucker;United States;2012
+Charlie Coyle;United States;2012
+Cameron Schilling;United States;2012
+Emerson Etem;United States;2012
+Luke Witkowski;United States;2012
+Chris Wagner;United States;2012
+Chris Brown;United States;2012
+Connor Hurley;United States;2012
+Matt Tennyson;United States;2012
+Luke Glendening;United States;2012
+Chris Wideman;United States;2012
+Chad Billins;United States;2012
+Bobby Farnham;United States;2012
+Adam Wilcox;United States;2012
+Paul Carey;United States;2012
+Chris Casto;United States;2012
+Reid Boucher;United States;2012
+Raman Hrabarenka;Belarus;2012
+Dominik Kubalik;Czech Republic;2012
+Petteri Lindbohm;Finland;2012
+Henri Kiviaho;Finland;2012
+Andrey Pedan;Lithuania;2012
+Nikita Tryamkin;Russia;2012
+Stanislav Galiev;Russia;2012
+Bogdan Yakimov;Russia;2012
+Brad Hunt;Canada;2012
+Matthew Puempel;Canada;2012
+Michael Chaput;Canada;2012
+Mark Pysyk;Canada;2012
+Morgan Ellis;Canada;2012
+Sam Carrick;Canada;2012
+Scott Stajcer;Canada;2012
+Quinton Howden;Canada;2012
+Michael Bournival;Canada;2012
+Reilly Smith;Canada;2012
+Alexander Killorn;Canada;2012
+Taylor Fedun;Canada;2012
+Alexandre Grenier;Canada;2012
+Jean-Gabriel Pageau;Canada;2012
+Duncan Siemens;Canada;2012
+Mark McNeill;Canada;2012
+Karl Stollery;Canada;2012
+Michael Sgarbossa;Canada;2012
+Adam Payerl;Canada;2012
+Freddie Hamilton;Canada;2012
+Julian Melchiori;Canada;2012
+Turner Elson;Canada;2012
+Calle Andersson;Sweden;2012
+Jacob de la Rose;Sweden;2012
+Robert Hägg;Sweden;2012
+Julius Bergman;Sweden;2012
+Jesper Pettersson;Sweden;2012
+Rasmus Andersson;Sweden;2012
+Anton Lindholm;Sweden;2012
+Linus Arnesson;Sweden;2012
+Andreas Johnsson;Sweden;2012
+Daniel Zaar;Sweden;2012
+Derek Forbort;United States;2013
+Keegan Lowe;United States;2013
+Nick Bjugstad;United States;2013
+Adam Lowry;United States;2013
+Brendan Woods;United States;2013
+Mac Carruth;United States;2013
+Nick Jensen;United States;2013
+Danny Kristo;United States;2013
+Seth Helgeson;United States;2013
+Alex Broadhurst;United States;2013
+Garret Ross;United States;2013
+Danny DeKeyser;United States;2013
+Stefan Noesen;United States;2013
+Andrew Miller;United States;2013
+Jansen Harkins;United States;2013
+Tim Schaller;United States;2013
+Buddy Robinson;United States;2013
+Tyler Biggs;United States;2013
+Jakub Vrana;Czech Republic;2013
+Pavel Jenys;Czech Republic;2013
+Julius Nättinen;Finland;2013
+Kasperi Kapanen;Finland;2013
+Juho Lammikko;Finland;2013
+Ville Husso;Finland;2013
+Aleksi Saarela;Finland;2013
+Markus Nutivaara;Finland;2013
+Christopher Gibson;Finland;2013
+Nikita Soshnikov;Russia;2013
+Vladislav Kamenev;Russia;2013
+Evgeny Svechnikov;Russia;2013
+Alexei Marchenko;Russia;2013
+Peter Cehlarik;Slovakia;2013
+Erik Cernak;Slovakia;2013
+Kevin Fiala;Switzerland;2013
+Dmytro Timashov;Ukraine;2013
+John Ramage;Canada;2013
+Ryan Murphy;Canada;2013
+Tyler Wotherspoon;Canada;2013
+Cedric Paquette;Canada;2013
+Cody Ceci;Canada;2013
+Darren Dietz;Canada;2013
+Kevin Gagne;Canada;2013
+Ryan Sproul;Canada;2013
+Brendan Ranford;Canada;2013
+Matthew Spencer;Canada;2013
+Colton Sissons;Canada;2013
+Logan Shaw;Canada;2013
+Scott Harrington;Canada;2013
+Daniel Catenacci;Canada;2013
+Danny Biega;Canada;2013
+Alex Friesen;Canada;2013
+Charles Hudon;Canada;2013
+Brenden Kichton;Canada;2013
+Mathew Dumba;Canada;2013
+Brett Kulak;Canada;2013
+Jonathan Racine;Canada;2013
+Stefan Fournier;Canada;2013
+Tyler Graovac;Canada;2013
+Joel Hanley;Canada;2013
+Lucas Lessio;Canada;2013
+Brock McGinn;Canada;2013
+Xavier Ouellet;France;2013
+Anton Cederholm;Sweden;2013
+Andreas Englund;Sweden;2013
+Marcus Pettersson;Sweden;2013
+Malte Strömwall;Sweden;2013
+Oliver Kylington;Sweden;2013
+Robin Kovacs;Sweden;2013
+Axel Holmström;Sweden;2013
+Adrian Kempe;Sweden;2013
+Carl Dahlström;Sweden;2013
+Anton Blidh;Sweden;2013
+Robin Norell;Sweden;2013
+Tobias Lindberg;Sweden;2013
+Brian Ferlin;United States;2014
+Cody Corbett;United States;2014
+Kenny Agostino;United States;2014
+Mike Zalewski;United States;2014
+Bill Arnold;United States;2014
+T. J. Tynan;United States;2014
+Max McCormick;United States;2014
+Garnet Hathaway;United States;2014
+Kevin Gravel;United States;2014
+Patrick Brown;United States;2014
+Nic Kerdiles;United States;2014
+Michael Mersch;United States;2014
+Ryan Dzingel;United States;2014
+Nic Dowd;United States;2014
+Pheonix Copley;United States;2014
+Karel Vejmelka;Czech Republic;2014
+Miroslav Svoboda;Czech Republic;2014
+Martin Réway;Czech Republic;2014
+Vitek Vanecek;Czech Republic;2014
+Julius Honka;Finland;2014
+Ivan Fedotov;Russia;2014
+Denis Guryanov;Russia;2014
+Nikolay Goldobin;Russia;2014
+Sergey Tolchinsky;Russia;2014
+Andreas Athanasiou;Canada;2014
+Dalton Thrower;Canada;2014
+Trevor Carrick;Canada;2014
+Brendan Leipsic;Canada;2014
+Darnell Nurse;Canada;2014
+Liam O'Brien;Canada;2014
+Anthony Mantha;Canada;2014
+Morgan Klimchuk;Canada;2014
+Curtis Lazar;Canada;2014
+Eric Comrie;Canada;2014
+Ben Thomson;Canada;2014
+Antoine Bibeau;Canada;2014
+Troy Bourke;Canada;2014
+Mackenzie Skapski;Canada;2014
+William Carrier;Canada;2014
+Émile Poirier;Canada;2014
+Barclay Goodrow;Canada;2014
+Adam Pelech;Canada;2014
+Mat Bodie;Canada;2014
+Brady Austin;Canada;2014
+Chandler Stephenson;Canada;2014
+Phillip Di Giuseppe;Canada;2014
+Shea Theodore;Canada;2014
+Chris Driedger;Canada;2014
+Connor Crisp;Canada;2014
+Dillon Fournier;Canada;2014
+Félix Girard;Canada;2014
+Guillaume Gélinas;Canada;2014
+Jake Dotchin;Canada;2014
+Kurtis Gabriel;Canada;2014
+Ryan Rupert;Canada;2014
+Slater Koekkoek;Canada;2014
+Scott Kosmachuk;Canada;2014
+Brendan Gaunce;Canada;2014
+Tyler Gaudet;Canada;2014
+Josh Morrissey;Canada;2014
+Marko Dano;Austria;2014
+Filip Ahl;Sweden;2014
+Gabriel Carlsson;Sweden;2014
+Oskar Lindblom;Sweden;2014
+Jacob Larsson;Sweden;2014
+Joel Eriksson Ek;Sweden;2014
+Oscar Dansk;Sweden;2014
+Gustav Forsling;Sweden;2014
+Gustav Olofsson;Sweden;2014
+Patrick McNally;United States;2015
+Mike Reilly;United States;2015
+Kyle Rau;United States;2015
+Michael McCarron;United States;2015
+Stephon Williams;United States;2015
+Jon Gillies;United States;2015
+Anthony DeAngelo;United States;2015
+Zach Palmquist;United States;2015
+Jordan Schmaltz;United States;2015
+Blake Coleman;United States;2015
+Andrew Copp;United States;2015
+Vince Hinostroza;United States;2015
+Jonny Brodzinski;United States;2015
+Tanner Kero;United States;2015
+Jaccob Slavin;United States;2015
+Michael Paliotta;United States;2015
+Cole Cassels;United States;2015
+Joakim Ryan;United States;2015
+Colin Stevens;United States;2015
+Brett Pesce;United States;2015
+Sonny Milano;United States;2015
+Oleg Yevenko;Belarus;2015
+Rinat Valiev;Russia;2015
+Nikita Scherbak;Russia;2015
+Valentin Zykov;Russia;2015
+Ivan Barbashev;Russia;2015
+Ryan Johnston;Canada;2015
+Jason Dickinson;Canada;2015
+Madison Bowey;Canada;2015
+Jared McCann;Canada;2015
+Dillon Heatherington;Canada;2015
+Kyle Baun;Canada;2015
+Adam Tambellini;Canada;2015
+Brayden Point;Canada;2015
+Brett Lernout;Canada;2015
+Nicolas Petan;Canada;2015
+Zachary Fucale;Canada;2015
+Joe Hicketts;Canada;2015
+Nicholas Baptiste;Canada;2015
+Cole Ully;Canada;2015
+Daniel Walcott;Canada;2015
+Matthew Peca;Canada;2015
+Evan Rodrigues;Canada;2015
+Brendan Guhle;Canada;2015
+Nick Paul;Canada;2015
+Remi Elie;Canada;2015
+Brycen Martin;Canada;2015
+Ashton Sautner;Canada;2015
+Tristan Jarry;Canada;2015
+Sam Bennett;Canada;2015
+Ross Johnston;Canada;2015
+Joseph Blandisi;Canada;2015
+Ben Hutton;Canada;2015
+Brandon Montour;Canada;2015
+Tyler Bertuzzi;Canada;2015
+Ben Harpur;Canada;2015
+Felix Sandström;Sweden;2015
+J. T. Compher;United States;2016
+Hudson Fasching;United States;2016
+Paul Bittner;United States;2016
+Conor Garland;United States;2016
+Jack Roslovic;United States;2016
+Jack Dougherty;United States;2016
+Alex Tuch;United States;2016
+Sam Anas;United States;2016
+Brendan Lemieux;United States;2016
+Thatcher Demko;United States;2016
+Rob O'Gara;United States;2016
+Andy Welinski;United States;2016
+Adam Gilmour;United States;2016
+Kyle Connor;United States;2016
+Casey Nelson;United States;2016
+Zach Sanford;United States;2016
+Mario Lucia;United States;2016
+Danny O'Regan;Germany;2016
+Thomas Di Pauli;Italy;2016
+John Quenneville;Canada;2016
+Kevin Roy;Canada;2016
+Rourke Chartier;Canada;2016
+Mackenzie Blackwood;Canada;2016
+Mitchell Stephens;Canada;2016
+Conner Bleackley;Canada;2016
+Josh Ho-Sang;Canada;2016
+Mark Jankowski;Canada;2016
+Francis Perron;Canada;2016
+Brandon Tanev;Canada;2016
