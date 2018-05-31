@@ -18,4 +18,11 @@ public class Country {
         this.countryName = countryName;
     }
 
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
 }

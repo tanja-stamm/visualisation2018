@@ -1,5 +1,8 @@
 package Service;
 
+import Model.Country;
+import Model.Data;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -13,13 +16,19 @@ public class CountryService {
             //use a scanner that will read from the file
             Scanner countriesScanner = new Scanner(countriesFile);
 
-            //read a line from the file
-            String nextLine = countriesScanner.nextLine();
+            //skip first line
+            countriesScanner.nextLine();
 
-            System.out.println("Next Line: " + nextLine);
+            String line;
+            while (countriesScanner.hasNext()){
+                line = countriesScanner.nextLine();
+                String[] countryComponents = line.split(";");
 
-            //split the file into parts
-            
+                //create Country-Object
+                Country newCountry = new Country(countryComponents[0],Integer.parseInt(countryComponents[1]));
+                Data.addToAllCountries(newCountry);
+            }
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
