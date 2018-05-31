@@ -1,23 +1,21 @@
 import javafx.application.Application;
 
-import java.awt.*;
+
 import java.util.Arrays;
 
 import javafx.collections.FXCollections;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 
 public class Main extends Application {
 
@@ -54,10 +52,16 @@ public class Main extends Application {
     public HBox createHeader() {
         HBox header = new HBox();
         Button b1 = new Button("Hallo");
-        header.getChildren().addAll(b1);
+        Label title = new Label("NHL Drafts nach Nationalitäten 1899 - 2016");
+        title.setMinHeight(25);
+        header.getChildren().addAll(title);
         header.setStyle("-fx-background-color: yellow; ");
+        header.setAlignment(Pos.TOP_CENTER);
         return header;
     }
+
+
+
 
     public VBox createSideBar(){
         CheckBox cb1 = new CheckBox("Europa");
@@ -66,7 +70,7 @@ public class Main extends Application {
 
         cb1.selectedProperty().addListener(e -> System.out.println("Hoi"));
 
-        VBox checkboxen = new VBox(5);
+        VBox checkboxen = new VBox(15);
         checkboxen.getChildren().addAll(cb1, cb2, cb3);
         return  checkboxen;
     }
