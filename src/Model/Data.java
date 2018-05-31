@@ -2,7 +2,7 @@ package Model;
 
 public class Data {
 
-    private static Player[] allPlayers = new Player[1066];
+    private static Player[] allPlayers = new Player[1065];
     private static Country[] allCountries = new Country[22];
 
     public Player[] getAllPlayers() {
