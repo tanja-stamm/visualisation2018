@@ -1,0 +1,23 @@
+Country;Population
+Austria;8725931
+Belarus;9498700
+Brazil;206440850
+Canada;36286425
+Croatia;4190700
+Czech Republic;10553443
+Denmark;5707251
+Finland;5488543
+France;66736000
+Germany;82175700
+Hungary;9855571
+Italy;60674003
+Lithuania;2859709
+Norway;5214900
+Poland;38483957
+Russia;144192450
+Slovakia;5426252
+Sweden;9920881
+Switzerland;8341000
+Ukraine;42539010
+United Kingdom;65110000
+United States;324720797

@@ -26,4 +26,3 @@ hs_err_pid*
 #Ignore folder
 .idea/
 visualisation2018.iml
-out/
