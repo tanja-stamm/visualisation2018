@@ -29,7 +29,7 @@ public class Main extends Application {
     private BarChart<Number, String> chartRelativ;
 
     BorderPane frame;
-    Boolean isAbsolute  ;
+    Boolean isAbsolute = true;
 
     private boolean chartModeBereinigt = false;
 
@@ -189,20 +189,33 @@ public class Main extends Application {
         final double TOGGLEBUTTON_WIDTH = 250;
         final double TOGGLEBUTTON_HEIGHT = 40;
 
+        Label lowerBoundLabel = new Label("Lower Bound (years)");
+        Slider lowerBoundSlider = new Slider();
+        Label upperBoundLabel = new Label("Upper Bound (years)");
+        Slider upperBoundSlider = new Slider();
 
-        Button b1 = new Button("set lowerbound to 1920");
-        b1.setOnAction(event -> DataModel.setLowerBoundFilter(1920));
-        Button b2 = new Button("set lowerbound to 1980");
-        b2.setOnAction(event -> DataModel.setLowerBoundFilter(1980));
+        lowerBoundSlider.setMin(1898);
+        lowerBoundSlider.maxProperty().bind(DataModel.upperBoundFilterProperty());
+        lowerBoundSlider.setShowTickLabels(true);
+        lowerBoundSlider.setShowTickMarks(true);
+        lowerBoundSlider.valueProperty().bindBidirectional(DataModel.lowerBoundFilterProperty());
+
+        upperBoundSlider.minProperty().bind(DataModel.lowerBoundFilterProperty());
+        upperBoundSlider.setMax(2018);
+        upperBoundSlider.setShowTickLabels(true);
+        upperBoundSlider.setShowTickMarks(true);
+        upperBoundSlider.valueProperty().bindBidirectional(DataModel.upperBoundFilterProperty());
+
 
         // create label to show result of selected toggle button
         final Label label = new Label();
         label.setStyle("-fx-font-size: 2em;");
         label.setAlignment(Pos.CENTER);
         // create 2 toggle buttons and a toogle group for them
-        final ToggleButton tb1 = new ToggleButton("Anzahl Drafts ingesamt");
+        final ToggleButton tb1 = new ToggleButton("Drafts insgesamt");
         tb1.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
-        final ToggleButton tb2 = new ToggleButton("Anzahl Drafts bereinigt nach Einwohner");
+        tb1.setSelected(true);
+        final ToggleButton tb2 = new ToggleButton("Drafts pro Million Einwohner");
         tb2.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
         ToggleGroup group = new ToggleGroup();
         tb1.setToggleGroup(group);
@@ -212,8 +225,6 @@ public class Main extends Application {
                 isAbsolute = true;
                 frame.setCenter(null);
                 frame.setCenter(createAbsoluteChart());
-
-
             }
             if (selectedToggle != null && selectedToggle == tb2) {
                 isAbsolute = false;
@@ -230,7 +241,7 @@ public class Main extends Application {
         cb1.selectedProperty().addListener(e -> System.out.println("Hoi"));
 
         VBox checkboxen = new VBox(15);
-        checkboxen.getChildren().addAll(tb1, tb2, cb1, cb2, cb3,b1,b2);
+        checkboxen.getChildren().addAll(tb1, tb2, cb1, cb2, cb3, lowerBoundLabel, lowerBoundSlider, upperBoundLabel, upperBoundSlider);
         return checkboxen;
 
     }
@@ -261,9 +272,6 @@ public class Main extends Application {
 
     public void setupChangeListener(){
         DataModel.getAllPlayersFiltered().addListener((ListChangeListener)(c -> {
-            System.out.println("List has changed");
-            frame.setCenter(null);
-
             if(isAbsolute){
             frame.setCenter(createAbsoluteChart());
             }
