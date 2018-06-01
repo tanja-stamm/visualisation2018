@@ -1,4 +1,4 @@
-import Model.Data;
+import Model.DataModel;
 import Service.CountryService;
 import javafx.application.Application;
 
@@ -25,9 +25,6 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    //
-
-
     //Data visualisation
     private BarChart<Number, String> chart;
     private CategoryAxis xAchse;
@@ -47,12 +44,11 @@ public class Main extends Application {
 
 
     public Parent createChart() {
-        final String[] countryNames = new String[Data.getAllCountries().length];
+        final String[] countryNames = new String[DataModel.getAllCountries().length];
 
-        for(int i = 0; i <= Data.getAllCountries().length-1; i++){
-            countryNames[i] = Data.getAllCountries()[i].getCountryName();
+        for(int i = 0; i <= DataModel.getAllCountries().length-1; i++){
+            countryNames[i] = DataModel.getAllCountries()[i].getCountryName();
         }
-
 
         xAchse = new CategoryAxis();
         yAchse = new NumberAxis();
@@ -71,15 +67,11 @@ public class Main extends Application {
         //setNodeStyle(series1.getData());
 
         for(int i = 0; i<=countryNames.length-1; i++){
-            XYChart.Data d = new XYChart.Data<Number, String>(3, Data.getAllCountries()[i].getCountryName());
+            XYChart.Data d = new XYChart.Data<Number, String>(3, DataModel.getAllCountries()[i].getCountryName());
             series1.getData().add(d);
         }
 
-
         chart.getData().add(series1);
-
-
-
 
         return chart;
     }
@@ -117,7 +109,12 @@ public class Main extends Application {
 
 
     public void start (Stage primaryStage) throws Exception {
+        //------------------Data----------------------------
         CountryService.importCountries();
+        CountryService.importPlayers();
+        DataModel.printAllPlayers();
+
+        //------------------View-----------------------------
         BorderPane frame = new BorderPane();
         frame.setCenter(createChart());
         frame.setTop(createHeader());
@@ -131,8 +128,6 @@ public class Main extends Application {
     public static void main (String[]args){
         System.out.println("Main is running!");
         launch(args);
-
-
     }
 }
 
