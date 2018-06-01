@@ -5,6 +5,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 
@@ -39,6 +40,8 @@ public class DataModel {
 
 
     public static void setupValueChangedListener() {
+
+
         lowerBoundFilter.addListener(((observable, oldValue, newValue) -> {
             System.out.println("new lower bound: "+ newValue);
             allPlayersFiltered.setPredicate(player -> {
@@ -88,7 +91,7 @@ public class DataModel {
         System.out.println("------------------------------------");
         System.out.println("allPlayersFiltered list: ");
         for (Player p : allPlayersFiltered) {
-            System.out.println(p.getPlayerName() + " " + p.getDraftYear());
+            System.out.println(p.getPlayerName() + " " + p.getDraftYear() + " " + p.getPlayerCountry().getCountryName());
         }
 
     }

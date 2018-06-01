@@ -9,6 +9,7 @@ import java.util.Arrays;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -29,6 +30,7 @@ public class Main extends Application {
     private BarChart<Number, String> chart;
     private CategoryAxis xAchse;
     private NumberAxis yAchse;
+    BorderPane frame;
 
 
     public Parent createChart() {
@@ -166,7 +168,9 @@ public class Main extends Application {
         DataModel.setUpData();
 
         //------------------View-----------------------------
-        BorderPane frame = new BorderPane();
+        frame = new BorderPane();
+        setupChangeListener();
+
         frame.setCenter(createChart());
         frame.setTop(createHeader());
         frame.setRight(createSideBar());
@@ -180,6 +184,14 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public void setupChangeListener(){
+        DataModel.getAllPlayersFiltered().addListener((ListChangeListener)(c -> {
+            System.out.println("List has changed");
+            frame.setCenter(null);
+            frame.setCenter(createChart());
+        }));
     }
 }
 
