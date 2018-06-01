@@ -1,5 +1,6 @@
 package TestingArea;
 
+import Model.Country;
 import Model.Player;
 import Service.ServiceAsArray;
 import Service.ServiceAsList;
@@ -35,8 +36,8 @@ public class TestEnvironment extends Application {
 
 
     //-------------------------------------------Countries--------------------------------------------------------------
-    private static List<Player> allCountriesList = new ArrayList<>();
-    public static final ObservableList<Player> allCountries = FXCollections.observableList(allCountriesList);
+    private static List<Country> allCountriesList = new ArrayList<>();
+    public static final ObservableList<Country> allCountries = FXCollections.observableList(allCountriesList);
 
 
 
@@ -64,6 +65,7 @@ public class TestEnvironment extends Application {
                 }
             });
         }));
+
         upperBoundFilter.addListener(((observable, oldValue, newValue) -> {
             allPlayersFiltered.setPredicate(player -> {
                 if(player.getDraftYear() < getLowerBoundFilter() || player.getDraftYear() > (Integer) newValue) {
@@ -91,6 +93,12 @@ public class TestEnvironment extends Application {
         System.out.println("allPlayersFiltered list: ");
         for (Player p : allPlayersFiltered) {
             System.out.println(p.getPlayerName() + " " + p.getDraftYear());
+        }
+
+        System.out.println("------------------------------------");
+        System.out.println("all Countries:");
+        for (Country c : allCountries) {
+            System.out.println(c.getCountryName());
         }
     }
 
@@ -121,7 +129,6 @@ public class TestEnvironment extends Application {
         aSeries.setName("a");
         cSeries.setName("C");
 
-
         for (int i = 2011; i < 2021; i++) {
             aSeries.getData().add(new XYChart.Data(Integer.toString(i), aValue));
             aValue = aValue + Math.random() - .5;
@@ -133,6 +140,7 @@ public class TestEnvironment extends Application {
     }
 
 
+    //-----------------------------------Getter & Setter----------------------------------------------------------------
     public static ObservableList<Player> getAllPlayers() {
         return allPlayers;
     }
@@ -159,5 +167,9 @@ public class TestEnvironment extends Application {
 
     public void setUpperBoundFilter(int upperBoundFilter) {
         this.upperBoundFilter.set(upperBoundFilter);
+    }
+
+    public static ObservableList<Country> getAllCountries() {
+        return allCountries;
     }
 }

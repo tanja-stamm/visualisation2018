@@ -28,7 +28,8 @@ public class ServiceAsList {
 
                 //create Country-Object
                 Country newCountry = new Country(countryComponents[0], Integer.parseInt(countryComponents[1]));
-                DataModel.addToAllCountries(newCountry);
+                TestEnvironment.getAllCountries().add(newCountry);
+
             }
 
 
@@ -59,8 +60,6 @@ public class ServiceAsList {
                 //add here player to list
                 TestEnvironment.getAllPlayers().add(newPlayer);
             }
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
