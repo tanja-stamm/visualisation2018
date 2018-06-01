@@ -22,12 +22,15 @@ public class ServiceAsList {
             countriesScanner.nextLine();
 
             String line;
+            int l = 0;
             while (countriesScanner.hasNext()) {
+                l++;
                 line = countriesScanner.nextLine();
                 String[] countryComponents = line.split(";");
 
                 //create Country-Object
                 Country newCountry = new Country(countryComponents[0], Integer.parseInt(countryComponents[1]));
+                System.out.println(l);
                 TestEnvironment.getAllCountries().add(newCountry);
 
             }
@@ -67,10 +70,9 @@ public class ServiceAsList {
 
 
     public static Country searchForCountry(String countryString) {
-        Country[] countries = DataModel.getAllCountries();
-        for(int i = 0; i < countries.length; i++){
-            if(countryString.toLowerCase().equals(countries[i].getCountryName().toLowerCase())){
-                return countries[i];
+        for (Country country : TestEnvironment.getAllCountries()) {
+            if(countryString.toLowerCase().equals(country.getCountryName().toLowerCase())){
+                return country;
             }
         }
         return null;

@@ -39,7 +39,7 @@ public class TestEnvironment extends Application {
     private static List<Country> allCountriesList = new ArrayList<>();
     public static final ObservableList<Country> allCountries = FXCollections.observableList(allCountriesList);
 
-    
+
 
 
     //------------------------------------------Custom Methods----------------------------------------------------------
@@ -79,7 +79,7 @@ public class TestEnvironment extends Application {
 
     public void setUpData() {
         setupValueChangedListener();
-        ServiceAsArray.importCountries();
+        ServiceAsList.importCountries();
         ServiceAsList.importPlayers();
 
         setLowerBoundFilter(1986);
@@ -172,4 +172,6 @@ public class TestEnvironment extends Application {
     public static ObservableList<Country> getAllCountries() {
         return allCountries;
     }
+
+
 }
