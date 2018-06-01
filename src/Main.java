@@ -31,25 +31,10 @@ public class Main extends Application {
     private NumberAxis yAchse;
 
 
-
-
-    //Versuch, Farbe des Balkens nach Wert anzupassen => funktioniert aber nicht!!
-    private void setNodeStyle(XYChart.Data<Number, String> data) {
-        Node node = data.getNode();
-        if (data.getXValue().intValue() > 8) {
-            node.setStyle("-fx-bar-fill: -fx-exceeded;");
-        } else if (data.getXValue().intValue() > 5) {
-            node.setStyle("-fx-bar-fill: -fx-achieved;");
-        } else {
-            node.setStyle("-fx-bar-fill: -fx-not-achieved;");
-        }
-    }
-
-
     public Parent createChart() {
         final String[] countryNames = new String[DataModel.getAllCountries().size()];
 
-        for(int i = 0; i <= DataModel.getAllCountries().size()-1; i++){
+        for (int i = 0; i <= DataModel.getAllCountries().size() - 1; i++) {
             countryNames[i] = DataModel.getAllCountries().get(i).getCountryName();
         }
 
@@ -72,28 +57,47 @@ public class Main extends Application {
         //setNodeStyle(series1.getData());
 
 
-
-        for(int i = 0; i<=countryNames.length-1; i++){
+        //fill in all the data: countries and number of players
+        for (int i = 0; i <= countryNames.length - 1; i++) {
             int counter = 0;
-            for(Player p: DataModel.getAllPlayersFiltered()){
-                if(p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountries().get(i).getCountryName())){
+            for (Player p : DataModel.getAllPlayersFiltered()) {
+                if (p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountries().get(i).getCountryName())) {
                     counter++;
                 }
             }
             XYChart.Data d = new XYChart.Data<Number, String>(counter, DataModel.getAllCountries().get(i).getCountryName());
             series1.getData().add(d);
-            XYChart.Data item = (XYChart.Data)series1.getData().get(i);
-            Tooltip.install(item.getNode(), new Tooltip("fasd"));
         }
 
         chart.getData().add(series1);
 
         // tooltip
 
-            for(int i = 0; i<=21; i++) {
+        for (int i = 0; i <= 21; i++) {
             XYChart.Data item = (XYChart.Data) series1.getData().get(i);
             String value = series1.getData().get(i).getXValue().toString();
             Tooltip.install(item.getNode(), new Tooltip("Anzahl Drafts: " + value));
+
+            //Changing the color of the bar depending on its value
+
+            if (series1.getData().get(i).getXValue().intValue() < 10) {
+                item.getNode().setStyle("-fx-bar-fill: #801638;");
+
+            } else if (series1.getData().get(i).getXValue().intValue() < 50) {
+                item.getNode().setStyle("-fx-bar-fill: #027878;");
+
+
+            } else if (series1.getData().get(i).getXValue().intValue() < 200) {
+                item.getNode().setStyle("-fx-bar-fill: #FDB632;");
+
+
+            } else if (series1.getData().get(i).getXValue().intValue() > 200) {
+                item.getNode().setStyle("-fx-bar-fill: #F37338;");
+
+
+            }
+
+
         }
         return chart;
     }
@@ -111,33 +115,31 @@ public class Main extends Application {
     }
 
 
-
-
-    public VBox createSideBar(){
+    public VBox createSideBar() {
         final double TOGGLEBUTTON_WIDTH = 250;
         final double TOGGLEBUTTON_HEIGHT = 40;
 
-            // create label to show result of selected toggle button
-            final Label label = new Label();
-            label.setStyle("-fx-font-size: 2em;");
-            label.setAlignment(Pos.CENTER);
-            // create 2 toggle buttons and a toogle group for them
-            final ToggleButton tb1 = new ToggleButton("Anzahl Drafts ingesamt");
-            tb1.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
-            final ToggleButton tb2 = new ToggleButton("Anzahl Drafts bereinigt nach Einwohner");
-            tb2.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
-            ToggleGroup group = new ToggleGroup();
-            tb1.setToggleGroup(group);
-            tb2.setToggleGroup(group);
-            group.selectedToggleProperty().addListener((ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle selectedToggle) -> {
-                if (selectedToggle != null && selectedToggle == tb1) {
-                    System.out.println("Unbereinigte Spielerliste");
+        // create label to show result of selected toggle button
+        final Label label = new Label();
+        label.setStyle("-fx-font-size: 2em;");
+        label.setAlignment(Pos.CENTER);
+        // create 2 toggle buttons and a toogle group for them
+        final ToggleButton tb1 = new ToggleButton("Anzahl Drafts ingesamt");
+        tb1.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
+        final ToggleButton tb2 = new ToggleButton("Anzahl Drafts bereinigt nach Einwohner");
+        tb2.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
+        ToggleGroup group = new ToggleGroup();
+        tb1.setToggleGroup(group);
+        tb2.setToggleGroup(group);
+        group.selectedToggleProperty().addListener((ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle selectedToggle) -> {
+            if (selectedToggle != null && selectedToggle == tb1) {
+                System.out.println("Unbereinigte Spielerliste");
 
-                } if(selectedToggle != null && selectedToggle == tb2){
-                    System.out.println("Bereinigte Spielerliste");
-                }
-            });
-
+            }
+            if (selectedToggle != null && selectedToggle == tb2) {
+                System.out.println("Bereinigte Spielerliste");
+            }
+        });
 
 
         CheckBox cb1 = new CheckBox("Europa");
@@ -148,13 +150,12 @@ public class Main extends Application {
 
         VBox checkboxen = new VBox(15);
         checkboxen.getChildren().addAll(tb1, tb2, cb1, cb2, cb3);
-        return  checkboxen;
+        return checkboxen;
 
     }
 
 
-
-    public void start (Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception {
         //------------------Data----------------------------
         DataModel.setUpData();
 
@@ -171,7 +172,7 @@ public class Main extends Application {
     }
 
 
-    public static void main (String[]args){
+    public static void main(String[] args) {
         launch(args);
     }
 }
