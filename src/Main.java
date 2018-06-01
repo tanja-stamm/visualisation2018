@@ -5,6 +5,9 @@ import javafx.application.Application;
 
 import java.util.Arrays;
 
+
+import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -26,6 +29,9 @@ public class Main extends Application {
     private BarChart<Number, String> chart;
     private CategoryAxis xAchse;
     private NumberAxis yAchse;
+
+
+
 
     //Versuch, Farbe des Balkens nach Wert anzupassen => funktioniert aber nicht!!
     private void setNodeStyle(XYChart.Data<Number, String> data) {
@@ -64,21 +70,29 @@ public class Main extends Application {
         //setNodeStyle(series1.getData());
 
 
+
         for(int i = 0; i<=countryNames.length-1; i++){
             int counter = 0;
             for(Player p: DataModel.getAllPlayersFiltered()){
                 if(p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountries().get(i).getCountryName())){
                     counter++;
-                    System.out.println("PlayersFiltered enthält: " + DataModel.getAllPlayersFiltered().size());
-                    System.out.println("counter erhöht!");
                 }
             }
             XYChart.Data d = new XYChart.Data<Number, String>(counter, DataModel.getAllCountries().get(i).getCountryName());
             series1.getData().add(d);
+            XYChart.Data item = (XYChart.Data)series1.getData().get(i);
+            Tooltip.install(item.getNode(), new Tooltip("fasd"));
         }
 
         chart.getData().add(series1);
 
+        // tooltip
+
+            for(int i = 0; i<=21; i++) {
+            XYChart.Data item = (XYChart.Data) series1.getData().get(i);
+            String value = series1.getData().get(i).getXValue().toString();
+            Tooltip.install(item.getNode(), new Tooltip("Anzahl Drafts: " + value));
+        }
         return chart;
     }
 
@@ -98,6 +112,32 @@ public class Main extends Application {
 
 
     public VBox createSideBar(){
+        final double TOGGLEBUTTON_WIDTH = 250;
+        final double TOGGLEBUTTON_HEIGHT = 40;
+
+            // create label to show result of selected toggle button
+            final Label label = new Label();
+            label.setStyle("-fx-font-size: 2em;");
+            label.setAlignment(Pos.CENTER);
+            // create 2 toggle buttons and a toogle group for them
+            final ToggleButton tb1 = new ToggleButton("Anzahl Drafts ingesamt");
+            tb1.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
+            final ToggleButton tb2 = new ToggleButton("Anzahl Drafts bereinigt nach Einwohner");
+            tb2.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
+            ToggleGroup group = new ToggleGroup();
+            tb1.setToggleGroup(group);
+            tb2.setToggleGroup(group);
+            group.selectedToggleProperty().addListener((ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle selectedToggle) -> {
+                if (selectedToggle != null && selectedToggle == tb1) {
+                    System.out.println("Unbereinigte Spielerliste");
+
+                } if(selectedToggle != null && selectedToggle == tb2){
+                    System.out.println("Bereinigte Spielerliste");
+                }
+            });
+
+
+
         CheckBox cb1 = new CheckBox("Europa");
         CheckBox cb2 = new CheckBox("Nordamerika");
         CheckBox cb3 = new CheckBox("Andere");
@@ -105,9 +145,11 @@ public class Main extends Application {
         cb1.selectedProperty().addListener(e -> System.out.println("Hoi"));
 
         VBox checkboxen = new VBox(15);
-        checkboxen.getChildren().addAll(cb1, cb2, cb3);
+        checkboxen.getChildren().addAll(tb1, tb2, cb1, cb2, cb3);
         return  checkboxen;
+
     }
+
 
 
     public void start (Stage primaryStage) throws Exception {
@@ -124,12 +166,10 @@ public class Main extends Application {
         scene.getStylesheets().add("stylesheet.css");
         primaryStage.setScene(scene);
         primaryStage.show();
-        System.out.println("Start is running!");
     }
 
 
     public static void main (String[]args){
-        System.out.println("Main is running!");
         launch(args);
     }
 }
