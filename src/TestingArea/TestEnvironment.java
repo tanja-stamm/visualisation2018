@@ -39,7 +39,7 @@ public class TestEnvironment extends Application {
     private static List<Country> allCountriesList = new ArrayList<>();
     public static final ObservableList<Country> allCountries = FXCollections.observableList(allCountriesList);
 
-
+    
 
 
     //------------------------------------------Custom Methods----------------------------------------------------------
