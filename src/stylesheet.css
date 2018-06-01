@@ -1,0 +1,6 @@
+.root {
+  -fx-barchart-color: magenta;
+}
+
+.default-color0.chart-bar { -fx-bar-fill: -fx-barchart-color; }
+

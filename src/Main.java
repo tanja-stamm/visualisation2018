@@ -66,6 +66,7 @@ public class Main extends Application {
         //Jelena: Versuch, den Node Style je nach Wert anzupassen, siehe Methode "setNodeStyle" Auskommentiert, da es sonst nicht kompiliert
         //setNodeStyle(series1.getData());
 
+
         for(int i = 0; i<=countryNames.length-1; i++){
             XYChart.Data d = new XYChart.Data<Number, String>(3, DataModel.getAllCountries()[i].getCountryName());
             series1.getData().add(d);
@@ -119,7 +120,10 @@ public class Main extends Application {
         frame.setCenter(createChart());
         frame.setTop(createHeader());
         frame.setRight(createSideBar());
-        primaryStage.setScene(new Scene(frame));
+        Scene scene = new Scene(frame);
+        //link stylesheet
+        scene.getStylesheets().add("stylesheet.css");
+        primaryStage.setScene(scene);
         primaryStage.show();
         System.out.println("Start is running!");
     }

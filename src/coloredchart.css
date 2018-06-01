@@ -1,9 +1,0 @@
-.root {
-  -fx-not-achieved: red;
-  -fx-achieved:     green;
-  -fx-exceeded:      blue;
-}
-
-.default-color0.chart-bar { -fx-bar-fill: -fx-not-achieved; }
-.default-color1.chart-bar { -fx-bar-fill: -fx-achieved; }
-.default-color2.chart-bar { -fx-bar-fill: -fx-exceeded; }
