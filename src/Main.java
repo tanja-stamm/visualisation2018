@@ -1,4 +1,4 @@
-import Model.Data;
+import Model.DataModel;
 import Service.CountryService;
 import javafx.application.Application;
 
@@ -6,9 +6,7 @@ import javafx.application.Application;
 import java.util.Arrays;
 
 import javafx.collections.FXCollections;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -16,8 +14,6 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
-import javafx.scene.effect.Glow;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -28,17 +24,17 @@ public class Main extends Application {
     //
 
 
-    //Data visualisation
+    //DataModel visualisation
     private BarChart<Number, String> chart;
     private CategoryAxis xAchse;
     private NumberAxis yAchse;
 
 
     public Parent createChart() {
-        final String[] countryNames = new String[Data.getAllCountries().length];
+        final String[] countryNames = new String[DataModel.getAllCountries().length];
 
-        for(int i = 0; i <= Data.getAllCountries().length-1; i++){
-            countryNames[i] = Data.getAllCountries()[i].getCountryName();
+        for(int i = 0; i <= DataModel.getAllCountries().length-1; i++){
+            countryNames[i] = DataModel.getAllCountries()[i].getCountryName();
         }
 
 
@@ -53,11 +49,11 @@ public class Main extends Application {
 
         // add starting data
         XYChart.Series<Number, String> series1 = new XYChart.Series<>();
-        series1.setName("Data Series 1");
+        series1.setName("DataModel Series 1");
 
 
         for(int i = 0; i<=countryNames.length-1; i++){
-        XYChart.Data d = new XYChart.Data<Number, String>(10, Data.getAllCountries()[i].getCountryName());
+        XYChart.Data d = new XYChart.Data<Number, String>(10, DataModel.getAllCountries()[i].getCountryName());
             series1.getData().add(d);
         }
 
@@ -101,7 +97,12 @@ public class Main extends Application {
 
 
     public void start (Stage primaryStage) throws Exception {
+        //----------------------Data-------------------------
         CountryService.importCountries();
+        CountryService.importPlayers();
+        DataModel.printAllPlayers();
+
+        //----------------------View-------------------------
         BorderPane frame = new BorderPane();
         frame.setCenter(createChart());
         frame.setTop(createHeader());
