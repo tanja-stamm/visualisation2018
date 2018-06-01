@@ -119,6 +119,12 @@ public class Main extends Application {
         final double TOGGLEBUTTON_WIDTH = 250;
         final double TOGGLEBUTTON_HEIGHT = 40;
 
+
+        Button b1 = new Button("set lowerbound to 1920");
+        b1.setOnAction(event -> DataModel.setLowerBoundFilter(1920));
+        Button b2 = new Button("set lowerbound to 1980");
+        b2.setOnAction(event -> DataModel.setLowerBoundFilter(1980));
+
         // create label to show result of selected toggle button
         final Label label = new Label();
         label.setStyle("-fx-font-size: 2em;");
@@ -149,7 +155,7 @@ public class Main extends Application {
         cb1.selectedProperty().addListener(e -> System.out.println("Hoi"));
 
         VBox checkboxen = new VBox(15);
-        checkboxen.getChildren().addAll(tb1, tb2, cb1, cb2, cb3);
+        checkboxen.getChildren().addAll(tb1, tb2, cb1, cb2, cb3,b1,b2);
         return checkboxen;
 
     }

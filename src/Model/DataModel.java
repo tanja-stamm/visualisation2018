@@ -40,6 +40,7 @@ public class DataModel {
 
     public static void setupValueChangedListener() {
         lowerBoundFilter.addListener(((observable, oldValue, newValue) -> {
+            System.out.println("new lower bound: "+ newValue);
             allPlayersFiltered.setPredicate(player -> {
                 if(player.getDraftYear() < (Integer) newValue || player.getDraftYear() > getUpperBoundFilter()) {
                     return false;
@@ -47,6 +48,7 @@ public class DataModel {
                     return true;
                 }
             });
+            printAllPlayersFiltered();
         }));
 
         upperBoundFilter.addListener(((observable, oldValue, newValue) -> {
@@ -72,11 +74,8 @@ public class DataModel {
         for (Player p : allPlayers) {
             System.out.println(p.getPlayerName() + " " + p.getDraftYear());
         }
-        System.out.println("------------------------------------");
-        System.out.println("allPlayersFiltered list: ");
-        for (Player p : allPlayersFiltered) {
-            System.out.println(p.getPlayerName() + " " + p.getDraftYear());
-        }
+
+        printAllPlayersFiltered();
 
         System.out.println("------------------------------------");
         System.out.println("all Countries:");
@@ -85,8 +84,13 @@ public class DataModel {
         }
     }
 
-    public static void setupAll(){
-        setUpData();
+    public static void printAllPlayersFiltered(){
+        System.out.println("------------------------------------");
+        System.out.println("allPlayersFiltered list: ");
+        for (Player p : allPlayersFiltered) {
+            System.out.println(p.getPlayerName() + " " + p.getDraftYear());
+        }
+
     }
 
 

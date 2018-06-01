@@ -42,7 +42,7 @@ public class ServiceAsList {
 
     public static void importPlayers() {
         try {
-            File playersFile = new File("src/players.txt");
+            File playersFile = new File("src/playersShort.txt");
             //use a scanner that will read from the file
             Scanner playersScanner = new Scanner(playersFile);
 
