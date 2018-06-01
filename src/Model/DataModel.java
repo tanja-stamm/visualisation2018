@@ -38,7 +38,7 @@ public class DataModel {
                 System.out.println(i + ": " +
                         allPlayers[i].getPlayerName() + "; " +
                         allPlayers[i].getDraftYear() + "; " +
-                        allPlayers[i].getPlayerCountry()
+                        allPlayers[i].getPlayerCountry().getCountryName()
                 );
             }
         }
