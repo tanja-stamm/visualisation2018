@@ -65,8 +65,8 @@ public class DataModel {
         ServiceAsList.importCountries();
         ServiceAsList.importPlayers();
 
-        setLowerBoundFilter(1986);
-        setUpperBoundFilter(1990);
+        setLowerBoundFilter(1886);
+        setUpperBoundFilter(2016);
 
         System.out.println("allPlayers list: ");
         for (Player p : allPlayers) {

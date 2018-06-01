@@ -1,4 +1,5 @@
 import Model.DataModel;
+import Model.Player;
 import javafx.application.Application;
 
 
@@ -64,7 +65,15 @@ public class Main extends Application {
 
 
         for(int i = 0; i<=countryNames.length-1; i++){
-            XYChart.Data d = new XYChart.Data<Number, String>(3, DataModel.getAllCountries().get(i).getCountryName());
+            int counter = 0;
+            for(Player p: DataModel.getAllPlayersFiltered()){
+                if(p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountries().get(i).getCountryName())){
+                    counter++;
+                    System.out.println("PlayersFiltered enthält: " + DataModel.getAllPlayersFiltered().size());
+                    System.out.println("counter erhöht!");
+                }
+            }
+            XYChart.Data d = new XYChart.Data<Number, String>(counter, DataModel.getAllCountries().get(i).getCountryName());
             series1.getData().add(d);
         }
 
