@@ -4,3 +4,9 @@
 
 .default-color0.chart-bar { -fx-bar-fill: -fx-barchart-color; }
 
+.chart-plot-background {
+    -fx-background-image: url("hockey_lighter.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover, auto;
+    -fx-background-position: center center;
+}
