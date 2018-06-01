@@ -66,6 +66,8 @@ public class Main extends Application {
         XYChart.Series<Number, String> series1 = new XYChart.Series<>();
         series1.setName("Data Series 1");
 
+        chart.setLegendVisible(false);
+
         //Jelena: Versuch, den Node Style je nach Wert anzupassen, siehe Methode "setNodeStyle" Auskommentiert, da es sonst nicht kompiliert
         //setNodeStyle(series1.getData());
 
