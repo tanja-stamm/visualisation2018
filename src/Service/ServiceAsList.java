@@ -1,9 +1,8 @@
 package Service;
 
 import Model.Country;
-import Model.DataModel;
 import Model.Player;
-import TestingArea.TestEnvironment;
+import Model.DataModel;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,7 +30,7 @@ public class ServiceAsList {
                 //create Country-Object
                 Country newCountry = new Country(countryComponents[0], Integer.parseInt(countryComponents[1]));
                 System.out.println(l);
-                TestEnvironment.getAllCountries().add(newCountry);
+                DataModel.getAllCountries().add(newCountry);
 
             }
 
@@ -61,7 +60,7 @@ public class ServiceAsList {
                         Integer.parseInt(playerComponents[2]),
                         searchForCountry(playerComponents[1]));
                 //add here player to list
-                TestEnvironment.getAllPlayers().add(newPlayer);
+                DataModel.getAllPlayers().add(newPlayer);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -70,7 +69,7 @@ public class ServiceAsList {
 
 
     public static Country searchForCountry(String countryString) {
-        for (Country country : TestEnvironment.getAllCountries()) {
+        for (Country country : DataModel.getAllCountries()) {
             if(countryString.toLowerCase().equals(country.getCountryName().toLowerCase())){
                 return country;
             }

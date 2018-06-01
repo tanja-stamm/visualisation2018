@@ -1,6 +1,4 @@
 import Model.DataModel;
-import Service.ServiceAsArray;
-import TestingArea.TestEnvironment;
 import javafx.application.Application;
 
 
@@ -42,10 +40,10 @@ public class Main extends Application {
 
 
     public Parent createChart() {
-        final String[] countryNames = new String[DataModel.getAllCountries().length];
+        final String[] countryNames = new String[DataModel.getAllCountries().size()];
 
-        for(int i = 0; i <= DataModel.getAllCountries().length-1; i++){
-            countryNames[i] = DataModel.getAllCountries()[i].getCountryName();
+        for(int i = 0; i <= DataModel.getAllCountries().size()-1; i++){
+            countryNames[i] = DataModel.getAllCountries().get(i).getCountryName();
         }
 
         xAchse = new CategoryAxis();
@@ -66,7 +64,7 @@ public class Main extends Application {
 
 
         for(int i = 0; i<=countryNames.length-1; i++){
-            XYChart.Data d = new XYChart.Data<Number, String>(3, DataModel.getAllCountries()[i].getCountryName());
+            XYChart.Data d = new XYChart.Data<Number, String>(3, DataModel.getAllCountries().get(i).getCountryName());
             series1.getData().add(d);
         }
 
@@ -74,10 +72,6 @@ public class Main extends Application {
 
         return chart;
     }
-
-
-
-
 
 
     public HBox createHeader() {
@@ -109,9 +103,7 @@ public class Main extends Application {
 
     public void start (Stage primaryStage) throws Exception {
         //------------------Data----------------------------
-        ServiceAsArray.importCountries();
-        ServiceAsArray.importPlayers();
-        DataModel.printAllPlayers();
+        DataModel.setUpData();
 
         //------------------View-----------------------------
         BorderPane frame = new BorderPane();

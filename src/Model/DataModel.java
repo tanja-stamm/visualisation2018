@@ -1,63 +1,131 @@
 package Model;
 
+import Service.ServiceAsList;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataModel {
+    //-------------------------------------------Players---------------------------------------------------------------
+    private static List<Player> allPlayersList = new ArrayList<>();
+    private static final ObservableList<Player> allPlayers = FXCollections.observableList(allPlayersList);
 
-    private static Player[] allPlayers = new Player[1063];
-    private static Country[] allCountries = new Country[22];
+    private static final FilteredList<Player> allPlayersFiltered = new FilteredList<>(allPlayers);
+
+    //Filter
+    private static final IntegerProperty lowerBoundFilter = new SimpleIntegerProperty(0);
+    private static final IntegerProperty upperBoundFilter = new SimpleIntegerProperty(9000);
 
 
-    public static void addToAllPlayers(Player player) {
-        for (int i = 0; i < allPlayers.length; i++) {
-            if(allPlayers[i] == null) {
-                allPlayers[i] = player;
-                break;
-            }
+
+    //-------------------------------------------Countries--------------------------------------------------------------
+    private static List<Country> allCountriesList = new ArrayList<>();
+    private static final ObservableList<Country> allCountries = FXCollections.observableList(allCountriesList);
+
+
+
+
+    //------------------------------------------Custom Methods----------------------------------------------------------
+
+
+
+    //------------------------------------------Getter & Setter---------------------------------------------------------
+
+
+    public static void setupValueChangedListener() {
+        lowerBoundFilter.addListener(((observable, oldValue, newValue) -> {
+            allPlayersFiltered.setPredicate(player -> {
+                if(player.getDraftYear() < (Integer) newValue || player.getDraftYear() > getUpperBoundFilter()) {
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        }));
+
+        upperBoundFilter.addListener(((observable, oldValue, newValue) -> {
+            allPlayersFiltered.setPredicate(player -> {
+                if(player.getDraftYear() < getLowerBoundFilter() || player.getDraftYear() > (Integer) newValue) {
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        }));
+    }
+
+    public static void setUpData() {
+        setupValueChangedListener();
+        ServiceAsList.importCountries();
+        ServiceAsList.importPlayers();
+
+        setLowerBoundFilter(1986);
+        setUpperBoundFilter(1990);
+
+        System.out.println("allPlayers list: ");
+        for (Player p : allPlayers) {
+            System.out.println(p.getPlayerName() + " " + p.getDraftYear());
+        }
+        System.out.println("------------------------------------");
+        System.out.println("allPlayersFiltered list: ");
+        for (Player p : allPlayersFiltered) {
+            System.out.println(p.getPlayerName() + " " + p.getDraftYear());
+        }
+
+        System.out.println("------------------------------------");
+        System.out.println("all Countries:");
+        for (Country c : allCountries) {
+            System.out.println(c.getCountryName());
         }
     }
 
-    public static void addToAllCountries(Country country) {
-        for (int i = 0; i < allCountries.length; i++) {
-            if(allCountries[i] == null) {
-                allCountries[i] = country;
-                break;
-            }
-        }
-    }
-
-    public static void printAllCountries(){
-        for (int i = 0; i < allCountries.length; i++) {
-            System.out.println(i + ": "+ allCountries[i].getCountryName() + " ; " + allCountries[i].getPopulation());
-        }
-    }
-
-    public static void printAllPlayers(){
-        for (int i = 0; i < getAllPlayers().length; i++) {
-            if(allPlayers[i] != null) {
-                System.out.println(i + ": " +
-                        allPlayers[i].getPlayerName() + "; " +
-                        allPlayers[i].getDraftYear() + "; " +
-                        allPlayers[i].getPlayerCountry().getCountryName()
-                );
-            }
-        }
+    public static void setupAll(){
+        setUpData();
     }
 
 
+    //-----------------------------------Getter & Setter----------------------------------------------------------------
 
-    //GETTERS AND SETTERS
-    public static Player[] getAllPlayers() {
+
+    public static ObservableList<Player> getAllPlayers() {
         return allPlayers;
     }
 
-    public void setAllPlayers(Player[] allPlayers) {
-        this.allPlayers = allPlayers;
+    public static FilteredList<Player> getAllPlayersFiltered() {
+        return allPlayersFiltered;
     }
 
-    public static Country[] getAllCountries() {
+    public static int getLowerBoundFilter() {
+        return lowerBoundFilter.get();
+    }
+
+    public static IntegerProperty lowerBoundFilterProperty() {
+        return lowerBoundFilter;
+    }
+
+    public static void setLowerBoundFilter(int lowerBoundFilter) {
+        DataModel.lowerBoundFilter.set(lowerBoundFilter);
+    }
+
+    public static int getUpperBoundFilter() {
+        return upperBoundFilter.get();
+    }
+
+    public static IntegerProperty upperBoundFilterProperty() {
+        return upperBoundFilter;
+    }
+
+    public static void setUpperBoundFilter(int upperBoundFilter) {
+        DataModel.upperBoundFilter.set(upperBoundFilter);
+    }
+
+    public static ObservableList<Country> getAllCountries() {
         return allCountries;
-    }
-
-    public void setAllCountries(Country[] allCountries) {
-        this.allCountries = allCountries;
     }
 }
