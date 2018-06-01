@@ -25,7 +25,7 @@ import java.util.List;
 public class TestEnvironment extends Application {
     //-------------------------------------------Players---------------------------------------------------------------
     private static List<Player> allPlayersList = new ArrayList<>();
-    public static final ObservableList<Player> allPlayers = FXCollections.observableList(allPlayersList);
+    private static final ObservableList<Player> allPlayers = FXCollections.observableList(allPlayersList);
 
     private final FilteredList<Player> allPlayersFiltered = new FilteredList<>(allPlayers);
 
@@ -37,7 +37,7 @@ public class TestEnvironment extends Application {
 
     //-------------------------------------------Countries--------------------------------------------------------------
     private static List<Country> allCountriesList = new ArrayList<>();
-    public static final ObservableList<Country> allCountries = FXCollections.observableList(allCountriesList);
+    private static final ObservableList<Country> allCountries = FXCollections.observableList(allCountriesList);
 
 
 
