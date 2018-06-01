@@ -6,7 +6,6 @@ public class DataModel {
     private static Country[] allCountries = new Country[22];
 
 
-
     public static void addToAllPlayers(Player player) {
         for (int i = 0; i < allPlayers.length; i++) {
             if(allPlayers[i] == null) {
@@ -15,7 +14,6 @@ public class DataModel {
             }
         }
     }
-
 
     public static void addToAllCountries(Country country) {
         for (int i = 0; i < allCountries.length; i++) {

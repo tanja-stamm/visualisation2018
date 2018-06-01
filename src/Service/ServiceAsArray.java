@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
-public class CountryService {
+public class ServiceAsArray {
 
     public static void importCountries() {
         try {

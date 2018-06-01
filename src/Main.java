@@ -1,12 +1,11 @@
 import Model.DataModel;
-import Service.CountryService;
+import Service.ServiceAsArray;
 import javafx.application.Application;
 
 
 import java.util.Arrays;
 
 import javafx.collections.FXCollections;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -16,8 +15,6 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
-import javafx.scene.effect.Glow;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -111,8 +108,8 @@ public class Main extends Application {
 
     public void start (Stage primaryStage) throws Exception {
         //------------------Data----------------------------
-        CountryService.importCountries();
-        CountryService.importPlayers();
+        ServiceAsArray.importCountries();
+        ServiceAsArray.importPlayers();
         DataModel.printAllPlayers();
 
         //------------------View-----------------------------

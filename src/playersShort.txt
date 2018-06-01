@@ -1,0 +1,13 @@
+Player;BirthPlace;Year
+Dickie Boon;Canada;1899
+Joe Hall;United Kingdom;1902
+Nick Harbaruk;Poland;1969
+Timo Turunen;Finland;1969
+Dean Talafous;United States;1974
+Olie Sundstroem;Sweden;1986
+Philippe Bozon;France;1986
+Jere Lehtinen;Finland;1990
+Miroslav Satan;Slovakia;1992
+Kevin Weekes;Canada;1995
+Olli Jokinen;Finland;1995
+Rhett Warrener;Canada;1996
