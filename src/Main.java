@@ -7,11 +7,9 @@ import java.util.Arrays;
 
 
 import javafx.beans.value.ObservableValue;
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -27,23 +25,97 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     //Data visualisation
-    private BarChart<Number, String> chart;
-    private CategoryAxis xAchse;
-    private NumberAxis yAchse;
+    private BarChart<Number, String> chartAbsolute;
+    private BarChart<Number, String> chartRelativ;
+
     BorderPane frame;
+    Boolean isAbsolute  ;
 
+    private boolean chartModeBereinigt = false;
 
-    public Parent createChart() {
+    public Parent createRelativeChart(){
         final String[] countryNames = new String[DataModel.getAllCountries().size()];
 
         for (int i = 0; i <= DataModel.getAllCountries().size() - 1; i++) {
             countryNames[i] = DataModel.getAllCountries().get(i).getCountryName();
         }
 
-        xAchse = new CategoryAxis();
-        yAchse = new NumberAxis();
-        chart = new BarChart<>(yAchse, xAchse);
-        chart.setTitle("Verteilung der NHL-Drafts nach Länder");
+        CategoryAxis xAchse = new CategoryAxis();
+        NumberAxis yAchse = new NumberAxis();
+        chartRelativ = new BarChart<>(yAchse, xAchse);
+        chartRelativ.setTitle("Verteilung der NHL-Drafts nach Länder");
+        yAchse.setLabel("Land");
+        xAchse.setCategories(FXCollections.<String>observableArrayList(Arrays
+                .asList(countryNames)));
+        yAchse.setLabel("Anzahl Drafts");
+
+        // add starting data
+        XYChart.Series<Number, String> series0 = new XYChart.Series<>();
+        series0.setName("Data Series 0");
+
+        chartRelativ.setLegendVisible(false);
+
+        //fill in all the data: countries and number of players
+        for (int i = 0; i <= countryNames.length - 1; i++) {
+            double counter = 0;
+            for (Player p : DataModel.getAllPlayersFiltered()) {
+                if (p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountries().get(i).getCountryName())) {
+                    counter++;
+                }
+            }
+            XYChart.Data d = new XYChart.Data<Number, String>(counter/(DataModel.getAllCountries().get(i).getPopulation()/1000000), DataModel.getAllCountries().get(i).getCountryName());
+            System.out.println("Pop / 100 " + DataModel.getAllCountries().get(i).getPopulation()/1000000);
+            System.out.println("counter / pop / 100 " + counter/(DataModel.getAllCountries().get(i).getPopulation()/1000000));
+            series0.getData().add(d);
+
+        }
+
+        chartRelativ.getData().add(series0);
+
+        // tooltip
+
+        for (int i = 0; i <= 21; i++) {
+            XYChart.Data item = (XYChart.Data) series0.getData().get(i);
+            String value = series0.getData().get(i).getXValue().toString();
+            Tooltip.install(item.getNode(), new Tooltip("Anzahl Drafts: " + value));
+
+            //Changing the color of the bar depending on its value
+
+            if (series0.getData().get(i).getXValue().intValue() < 10) {
+                item.getNode().setStyle("-fx-bar-fill: #801638;");
+
+            } else if (series0.getData().get(i).getXValue().intValue() < 50) {
+                item.getNode().setStyle("-fx-bar-fill: #027878;");
+
+
+            } else if (series0.getData().get(i).getXValue().intValue() < 200) {
+                item.getNode().setStyle("-fx-bar-fill: #FDB632;");
+
+
+            } else if (series0.getData().get(i).getXValue().intValue() > 200) {
+                item.getNode().setStyle("-fx-bar-fill: #F37338;");
+
+
+            }
+
+
+        }
+        return chartRelativ;
+
+
+    }
+
+    public Parent createAbsoluteChart() {
+        final String[] countryNames = new String[DataModel.getAllCountries().size()];
+
+        for (int i = 0; i <= DataModel.getAllCountries().size() - 1; i++) {
+            countryNames[i] = DataModel.getAllCountries().get(i).getCountryName();
+        }
+
+        CategoryAxis xAchse = new CategoryAxis();
+        NumberAxis yAchse = new NumberAxis();
+        chartAbsolute = new BarChart<>(yAchse, xAchse);
+        chartAbsolute.setTitle("Verteilung der NHL-Drafts nach Länder");
         yAchse.setLabel("Land");
         xAchse.setCategories(FXCollections.<String>observableArrayList(Arrays
                 .asList(countryNames)));
@@ -53,11 +125,7 @@ public class Main extends Application {
         XYChart.Series<Number, String> series1 = new XYChart.Series<>();
         series1.setName("Data Series 1");
 
-        chart.setLegendVisible(false);
-
-        //Jelena: Versuch, den Node Style je nach Wert anzupassen, siehe Methode "setNodeStyle" Auskommentiert, da es sonst nicht kompiliert
-        //setNodeStyle(series1.getData());
-
+        chartAbsolute.setLegendVisible(false);
 
         //fill in all the data: countries and number of players
         for (int i = 0; i <= countryNames.length - 1; i++) {
@@ -71,7 +139,7 @@ public class Main extends Application {
             series1.getData().add(d);
         }
 
-        chart.getData().add(series1);
+        chartAbsolute.getData().add(series1);
 
         // tooltip
 
@@ -101,7 +169,7 @@ public class Main extends Application {
 
 
         }
-        return chart;
+        return chartAbsolute;
     }
 
 
@@ -141,11 +209,16 @@ public class Main extends Application {
         tb2.setToggleGroup(group);
         group.selectedToggleProperty().addListener((ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle selectedToggle) -> {
             if (selectedToggle != null && selectedToggle == tb1) {
-                System.out.println("Unbereinigte Spielerliste");
+                isAbsolute = true;
+                frame.setCenter(null);
+                frame.setCenter(createAbsoluteChart());
+
 
             }
             if (selectedToggle != null && selectedToggle == tb2) {
-                System.out.println("Bereinigte Spielerliste");
+                isAbsolute = false;
+                frame.setCenter(null);
+                frame.setCenter(createRelativeChart());
             }
         });
 
@@ -171,7 +244,7 @@ public class Main extends Application {
         frame = new BorderPane();
         setupChangeListener();
 
-        frame.setCenter(createChart());
+        frame.setCenter(createAbsoluteChart());
         frame.setTop(createHeader());
         frame.setRight(createSideBar());
         Scene scene = new Scene(frame);
@@ -190,7 +263,13 @@ public class Main extends Application {
         DataModel.getAllPlayersFiltered().addListener((ListChangeListener)(c -> {
             System.out.println("List has changed");
             frame.setCenter(null);
-            frame.setCenter(createChart());
+
+            if(isAbsolute){
+            frame.setCenter(createAbsoluteChart());
+            }
+            else{
+                frame.setCenter(createRelativeChart());
+            }
         }));
     }
 }
