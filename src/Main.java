@@ -21,7 +21,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -306,7 +305,7 @@ public class Main extends Application {
             updateChart();
         }));
 
-        toggleSwitch.isLeftProperty().addListener((observable, oldValue, newValue) -> {
+        toggleSwitch.leftProperty().addListener((observable, oldValue, newValue) -> {
             isAbsolute = newValue;
             updateChart();
         });

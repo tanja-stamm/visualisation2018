@@ -12,11 +12,11 @@ import javafx.util.Duration;
 
 public class ToggleSwitch extends Parent {
 
-    private BooleanProperty isLeft = new SimpleBooleanProperty(false);
+    private BooleanProperty left = new SimpleBooleanProperty(false);
     private TranslateTransition translateAnimation = new TranslateTransition( Duration.seconds(0.02));
 
-    public ToggleSwitch(boolean isLeft) {
-        setIsLeft(isLeft);
+    public ToggleSwitch(boolean Left) {
+        setLeft(Left);
 
         Rectangle background = new Rectangle(40,20);
         background.setArcHeight(20);
@@ -34,29 +34,28 @@ public class ToggleSwitch extends Parent {
 
         getChildren().addAll(background, trigger);
 
-        isLeftProperty().addListener((observable, oldValue, newValue) -> {
+        leftProperty().addListener((observable, oldValue, newValue) -> {
             translateAnimation.setToX(oldValue ? 40 - 20 : 0);
             translateAnimation.play();
-            System.out.println(newValue);
         });
 
         setOnMouseClicked(event -> {
-            setIsLeft(!isIsLeft());
+            setLeft(!getLeft());
         });
 
     }
 
 
 
-    public boolean isIsLeft() {
-        return isLeft.get();
+    public boolean getLeft() {
+        return left.get();
     }
 
-    public BooleanProperty isLeftProperty() {
-        return isLeft;
+    public BooleanProperty leftProperty() {
+        return left;
     }
 
-    public void setIsLeft(boolean isLeft) {
-        this.isLeft.set(isLeft);
+    public void setLeft(boolean left) {
+        this.left.set(left);
     }
 }
