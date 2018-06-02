@@ -7,6 +7,7 @@ import javafx.application.Application;
 import java.util.Arrays;
 
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -47,7 +48,6 @@ public class Main extends Application {
         CategoryAxis xAchse = new CategoryAxis();
         NumberAxis yAchse = new NumberAxis();
         chartRelativ = new BarChart<>(yAchse, xAchse);
-        chartRelativ.setTitle("Verteilung der NHL-Drafts nach Länder");
         yAchse.setLabel("Land");
         xAchse.setCategories(FXCollections.<String>observableArrayList(Arrays
                 .asList(countryNames)));
@@ -69,42 +69,28 @@ public class Main extends Application {
             }
             XYChart.Data d = new XYChart.Data<Number, String>(counter/(DataModel.getAllCountries().get(i).getPopulation()/1000000), DataModel.getAllCountries().get(i).getCountryName());
             series0.getData().add(d);
-
         }
 
         chartRelativ.getData().add(series0);
 
         // tooltip
-
         for (int i = 0; i <= 21; i++) {
             XYChart.Data item = (XYChart.Data) series0.getData().get(i);
             String value = series0.getData().get(i).getXValue().toString();
             Tooltip.install(item.getNode(), new Tooltip("Anzahl Drafts: " + value));
 
             //Changing the color of the bar depending on its value
-
             if (series0.getData().get(i).getXValue().intValue() < 10) {
                 item.getNode().setStyle("-fx-bar-fill: #801638;");
-
             } else if (series0.getData().get(i).getXValue().intValue() < 50) {
                 item.getNode().setStyle("-fx-bar-fill: #027878;");
-
-
             } else if (series0.getData().get(i).getXValue().intValue() < 200) {
                 item.getNode().setStyle("-fx-bar-fill: #FDB632;");
-
-
             } else if (series0.getData().get(i).getXValue().intValue() > 200) {
                 item.getNode().setStyle("-fx-bar-fill: #F37338;");
-
-
             }
-
-
         }
         return chartRelativ;
-
-
     }
 
     public Parent createAbsoluteChart() {
@@ -117,7 +103,6 @@ public class Main extends Application {
         CategoryAxis xAchse = new CategoryAxis();
         NumberAxis yAchse = new NumberAxis();
         chartAbsolute = new BarChart<>(yAchse, xAchse);
-        chartAbsolute.setTitle("Verteilung der NHL-Drafts nach Länder");
         yAchse.setLabel("Land");
         xAchse.setCategories(FXCollections.<String>observableArrayList(Arrays
                 .asList(countryNames)));
@@ -140,36 +125,24 @@ public class Main extends Application {
             XYChart.Data d = new XYChart.Data<Number, String>(counter, DataModel.getAllCountries().get(i).getCountryName());
             series1.getData().add(d);
         }
-
         chartAbsolute.getData().add(series1);
 
         // tooltip
-
         for (int i = 0; i <= 21; i++) {
             XYChart.Data item = (XYChart.Data) series1.getData().get(i);
             String value = series1.getData().get(i).getXValue().toString();
             Tooltip.install(item.getNode(), new Tooltip("Anzahl Drafts: " + value));
 
             //Changing the color of the bar depending on its value
-
             if (series1.getData().get(i).getXValue().intValue() < 10) {
                 item.getNode().setStyle("-fx-bar-fill: #801638;");
-
             } else if (series1.getData().get(i).getXValue().intValue() < 50) {
                 item.getNode().setStyle("-fx-bar-fill: #027878;");
-
-
             } else if (series1.getData().get(i).getXValue().intValue() < 200) {
                 item.getNode().setStyle("-fx-bar-fill: #FDB632;");
-
-
             } else if (series1.getData().get(i).getXValue().intValue() > 200) {
                 item.getNode().setStyle("-fx-bar-fill: #F37338;");
-
-
             }
-
-
         }
         return chartAbsolute;
     }
@@ -177,36 +150,31 @@ public class Main extends Application {
 
     public HBox createHeader() {
         HBox header = new HBox();
-        Button b1 = new Button("Hallo");
-        Label title = new Label("NHL Drafts nach Nationalitäten 1899 - 2016");
+        Label title = new Label("NHL Drafts nach Nationalitäten");
         title.setMinHeight(25);
+
+        HBox controleBox = new HBox();
+        controleBox.getChildren().addAll();
+
         header.getChildren().addAll(title);
         header.getStyleClass().add("header");
         header.setAlignment(Pos.TOP_CENTER);
         return header;
     }
 
+    public VBox setBoundariesArea() {
+        VBox area = new VBox();
+        area.getStyleClass().add("gray-background");
 
+        Label boundsTitle = new Label();
+        boundsTitle.getStyleClass().add("area-title");
+        boundsTitle.textProperty().bind(
+                Bindings.concat("Angezeigte Jahre: ", DataModel.lowerBoundFilterProperty(), " - ", DataModel.upperBoundFilterProperty())
+        );
 
-
-
-    public VBox createSideBar() {
-
-        Label lblAbsolute = new Label("absolut");
-        Label lblRelative = new Label("relativ");
-
-        toggleSwitch = new ToggleSwitch(true);
-
-        HBox stateBox = new HBox();
-        stateBox.getChildren().addAll(lblAbsolute,toggleSwitch, lblRelative);
-
-
-        final double TOGGLEBUTTON_WIDTH = 250;
-        final double TOGGLEBUTTON_HEIGHT = 40;
-
-        Label lowerBoundLabel = new Label("Lower Bound (years)");
+        Label lowerBoundLabel = new Label("Untere Jahresgrenze:");
         Slider lowerBoundSlider = new Slider();
-        Label upperBoundLabel = new Label("Upper Bound (years)");
+        Label upperBoundLabel = new Label("Obere Jahresgrenze:");
         Slider upperBoundSlider = new Slider();
 
         lowerBoundSlider.setMin(1898);
@@ -221,33 +189,35 @@ public class Main extends Application {
         upperBoundSlider.setShowTickMarks(true);
         upperBoundSlider.valueProperty().bindBidirectional(DataModel.upperBoundFilterProperty());
 
+        area.getChildren().addAll(boundsTitle,lowerBoundLabel,lowerBoundSlider,upperBoundLabel,upperBoundSlider);
+
+        return area;
+    }
+
+    public HBox toggleArea() {
+        HBox toggleArea = new HBox();
+        toggleArea.getStyleClass().add("gray-background");
+
+        Label lblAbsolute = new Label("Anzahl Drafts absolut");
+        Label lblRelative = new Label("Drafts pro Million Einwohner");
+
+        toggleSwitch = new ToggleSwitch(true);
+
+        toggleArea.getChildren().addAll(lblAbsolute,toggleSwitch, lblRelative);
+
+        return toggleArea;
+    }
 
 
+    public VBox filterContinentArea() {
+        VBox filterContinentArea = new VBox();
+        filterContinentArea.getStyleClass().add("gray-background");
 
-        // create label to show result of selected toggle button
-        final Label label = new Label();
-        label.setStyle("-fx-font-size: 2em;");
-        label.setAlignment(Pos.CENTER);
-        // create 2 toggle buttons and a toogle group for them
-        final ToggleButton tb1 = new ToggleButton("Drafts insgesamt");
-        tb1.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
-        tb1.setSelected(true);
-        final ToggleButton tb2 = new ToggleButton("Drafts pro Million Einwohner");
-        tb2.setMinSize(TOGGLEBUTTON_WIDTH, TOGGLEBUTTON_HEIGHT);
-        ToggleGroup group = new ToggleGroup();
-        tb1.setToggleGroup(group);
-        tb2.setToggleGroup(group);
-        group.selectedToggleProperty().addListener((ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle selectedToggle) -> {
-            if (selectedToggle != null && selectedToggle == tb1) {
-                isAbsolute = true;
-                frame.setCenter(createAbsoluteChart());
-            }
-            if (selectedToggle != null && selectedToggle == tb2) {
-                isAbsolute = false;
-                frame.setCenter(createRelativeChart());
-            }
-        });
+        Label filterTitle = new Label("Angezeigte Kontinente:");
+        filterTitle.getStyleClass().add("area-title");
 
+        HBox boxCheckBoxes = new HBox();
+        boxCheckBoxes.getStyleClass().add("check-boxes");
 
         CheckBox cb1 = new CheckBox("Europa");
         CheckBox cb2 = new CheckBox("Nordamerika");
@@ -255,11 +225,18 @@ public class Main extends Application {
 
         cb1.selectedProperty().addListener(e -> System.out.println("Hoi"));
 
+        boxCheckBoxes.getChildren().addAll(cb1,cb2,cb3);
+        filterContinentArea.getChildren().addAll(filterTitle,boxCheckBoxes);
+
+        return filterContinentArea;
+    }
+
+
+    public VBox createSideBar() {
         VBox sideBar = new VBox(15);
         sideBar.getStyleClass().add("sideBar");
-        sideBar.getChildren().addAll(stateBox, tb1, tb2, cb1, cb2, cb3, lowerBoundLabel, lowerBoundSlider, upperBoundLabel, upperBoundSlider);
+        sideBar.getChildren().addAll(setBoundariesArea(),toggleArea(),filterContinentArea());
         return sideBar;
-
     }
 
 
@@ -269,7 +246,6 @@ public class Main extends Application {
 
         //------------------View-----------------------------
         frame = new BorderPane();
-
         frame.setCenter(createAbsoluteChart());
         frame.setTop(createHeader());
         frame.setRight(createSideBar());
@@ -278,7 +254,7 @@ public class Main extends Application {
         //get Sceen-size
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
         //set size of window
-        Scene scene = new Scene(frame, primaryScreenBounds.getWidth()/3*1.8, primaryScreenBounds.getHeight()-40);
+        Scene scene = new Scene(frame, primaryScreenBounds.getWidth()/3*2.2, primaryScreenBounds.getHeight()-40);
 
         //link stylesheet
         scene.getStylesheets().add("stylesheet.css");

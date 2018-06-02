@@ -20,11 +20,27 @@
 -fx-padding: 15;
 }
 
+
 .header .label {
     -fx-font-size: 30;
 }
 
 .sideBar {
+    -fx-pref-width: 500;
+    -fx-padding: 15 60 60 40;
+}
+
+.gray-background {
+    -fx-spacing: 15;
+    -fx-background-color: #efefef;
     -fx-padding: 15;
+    -fx-background-radius: 10;
+}
+.check-boxes {
+    -fx-spacing: 15;
+}
+
+.area-title{
+    -fx-font-size: 16;
 }
 
