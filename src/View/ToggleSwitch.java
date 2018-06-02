@@ -46,7 +46,6 @@ public class ToggleSwitch extends Parent {
     }
 
 
-
     public boolean getLeft() {
         return left.get();
     }

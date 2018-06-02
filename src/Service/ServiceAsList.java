@@ -21,15 +21,12 @@ public class ServiceAsList {
             countriesScanner.nextLine();
 
             String line;
-            int l = 0;
             while (countriesScanner.hasNext()) {
-                l++;
                 line = countriesScanner.nextLine();
                 String[] countryComponents = line.split(";");
 
                 //create Country-Object
                 Country newCountry = new Country(countryComponents[0], Integer.parseInt(countryComponents[1]));
-                System.out.println(l);
                 DataModel.getAllCountries().add(newCountry);
 
             }
