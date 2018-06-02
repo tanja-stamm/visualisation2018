@@ -1,5 +1,10 @@
 .root {
   -fx-barchart-color: magenta;
+  -fx-background-color: white;
+
+}
+.toggle-button {
+
 }
 
 .default-color0.chart-bar { -fx-bar-fill: -fx-barchart-color; }
@@ -10,3 +15,16 @@
     -fx-background-size: cover, auto;
     -fx-background-position: center center;
 }
+
+.header {
+-fx-padding: 15;
+}
+
+.header .label {
+    -fx-font-size: 30;
+}
+
+.sideBar {
+    -fx-padding: 15;
+}
+

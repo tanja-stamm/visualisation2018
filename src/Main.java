@@ -1,5 +1,6 @@
 import Model.DataModel;
 import Model.Player;
+import View.ToggleSwitch;
 import javafx.application.Application;
 
 
@@ -10,6 +11,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -21,6 +23,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -31,6 +34,7 @@ public class Main extends Application {
 
     BorderPane frame;
     Boolean isAbsolute = true;
+    ToggleSwitch toggleSwitch;
 
     private boolean chartModeBereinigt = false;
 
@@ -65,8 +69,6 @@ public class Main extends Application {
                 }
             }
             XYChart.Data d = new XYChart.Data<Number, String>(counter/(DataModel.getAllCountries().get(i).getPopulation()/1000000), DataModel.getAllCountries().get(i).getCountryName());
-            System.out.println("Pop / 100 " + DataModel.getAllCountries().get(i).getPopulation()/1000000);
-            System.out.println("counter / pop / 100 " + counter/(DataModel.getAllCountries().get(i).getPopulation()/1000000));
             series0.getData().add(d);
 
         }
@@ -180,14 +182,26 @@ public class Main extends Application {
         Label title = new Label("NHL Drafts nach Nationalitäten 1899 - 2016");
         title.setMinHeight(25);
         header.getChildren().addAll(title);
-        header.setStyle("-fx-background-color: yellow; ");
+        header.getStyleClass().add("header");
         header.setAlignment(Pos.TOP_CENTER);
         return header;
     }
 
 
 
+
+
     public VBox createSideBar() {
+
+        Label lblAbsolute = new Label("absolut");
+        Label lblRelative = new Label("relativ");
+
+        toggleSwitch = new ToggleSwitch(true);
+
+        HBox stateBox = new HBox();
+        stateBox.getChildren().addAll(lblAbsolute,toggleSwitch, lblRelative);
+
+
         final double TOGGLEBUTTON_WIDTH = 250;
         final double TOGGLEBUTTON_HEIGHT = 40;
 
@@ -209,6 +223,8 @@ public class Main extends Application {
         upperBoundSlider.valueProperty().bindBidirectional(DataModel.upperBoundFilterProperty());
 
 
+
+
         // create label to show result of selected toggle button
         final Label label = new Label();
         label.setStyle("-fx-font-size: 2em;");
@@ -225,12 +241,10 @@ public class Main extends Application {
         group.selectedToggleProperty().addListener((ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle selectedToggle) -> {
             if (selectedToggle != null && selectedToggle == tb1) {
                 isAbsolute = true;
-                frame.setCenter(null);
                 frame.setCenter(createAbsoluteChart());
             }
             if (selectedToggle != null && selectedToggle == tb2) {
                 isAbsolute = false;
-                frame.setCenter(null);
                 frame.setCenter(createRelativeChart());
             }
         });
@@ -242,9 +256,10 @@ public class Main extends Application {
 
         cb1.selectedProperty().addListener(e -> System.out.println("Hoi"));
 
-        VBox checkboxen = new VBox(15);
-        checkboxen.getChildren().addAll(tb1, tb2, cb1, cb2, cb3, lowerBoundLabel, lowerBoundSlider, upperBoundLabel, upperBoundSlider);
-        return checkboxen;
+        VBox sideBar = new VBox(15);
+        sideBar.getStyleClass().add("sideBar");
+        sideBar.getChildren().addAll(stateBox, tb1, tb2, cb1, cb2, cb3, lowerBoundLabel, lowerBoundSlider, upperBoundLabel, upperBoundSlider);
+        return sideBar;
 
     }
 
@@ -255,12 +270,17 @@ public class Main extends Application {
 
         //------------------View-----------------------------
         frame = new BorderPane();
-        setupChangeListener();
 
         frame.setCenter(createAbsoluteChart());
         frame.setTop(createHeader());
         frame.setRight(createSideBar());
-        Scene scene = new Scene(frame);
+        setupChangeListener();
+
+        //get Sceen-size
+        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+        //set size of window
+        Scene scene = new Scene(frame, primaryScreenBounds.getWidth()/3*1.8, primaryScreenBounds.getHeight()-40);
+
         //link stylesheet
         scene.getStylesheets().add("stylesheet.css");
         primaryStage.setScene(scene);
@@ -272,15 +292,24 @@ public class Main extends Application {
         launch(args);
     }
 
+    public void updateChart() {
+        if(isAbsolute){
+            frame.setCenter(createAbsoluteChart());
+        }
+        else{
+            frame.setCenter(createRelativeChart());
+        }
+    }
+
     public void setupChangeListener(){
         DataModel.getAllPlayersFiltered().addListener((ListChangeListener)(c -> {
-            if(isAbsolute){
-            frame.setCenter(createAbsoluteChart());
-            }
-            else{
-                frame.setCenter(createRelativeChart());
-            }
+            updateChart();
         }));
+
+        toggleSwitch.isLeftProperty().addListener((observable, oldValue, newValue) -> {
+            isAbsolute = newValue;
+            updateChart();
+        });
     }
 }
 
