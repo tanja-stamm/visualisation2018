@@ -35,14 +35,17 @@ public class Main extends Application {
     BorderPane frame;
     Boolean isAbsolute = true;
     ToggleSwitch toggleSwitch;
+    CheckBox checkBoxEurope;
+    CheckBox checkBoxNorthAmerica;
+    CheckBox checkBoxOthers;
 
     private boolean chartModeBereinigt = false;
 
-    public Parent createRelativeChart(){
-        final String[] countryNames = new String[DataModel.getAllCountries().size()];
+    public Parent createRelativeChart() {
+        final String[] countryNames = new String[DataModel.getAllCountriesFiltered().size()];
 
-        for (int i = 0; i <= DataModel.getAllCountries().size() - 1; i++) {
-            countryNames[i] = DataModel.getAllCountries().get(i).getCountryName();
+        for (int i = 0; i <= DataModel.getAllCountriesFiltered().size() - 1; i++) {
+            countryNames[i] = DataModel.getAllCountriesFiltered().get(i).getCountryName();
         }
 
         CategoryAxis xAchse = new CategoryAxis();
@@ -63,18 +66,18 @@ public class Main extends Application {
         for (int i = 0; i <= countryNames.length - 1; i++) {
             double counter = 0;
             for (Player p : DataModel.getAllPlayersFiltered()) {
-                if (p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountries().get(i).getCountryName())) {
+                if (p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountriesFiltered().get(i).getCountryName())) {
                     counter++;
                 }
             }
-            XYChart.Data d = new XYChart.Data<Number, String>(counter/(DataModel.getAllCountries().get(i).getPopulation()/1000000), DataModel.getAllCountries().get(i).getCountryName());
+            XYChart.Data d = new XYChart.Data<Number, String>(counter / (DataModel.getAllCountriesFiltered().get(i).getPopulation() / 1000000), DataModel.getAllCountriesFiltered().get(i).getCountryName());
             series0.getData().add(d);
         }
 
         chartRelativ.getData().add(series0);
 
         // tooltip
-        for (int i = 0; i <= 21; i++) {
+        for (int i = 0; i <= countryNames.length-1; i++) {
             XYChart.Data item = (XYChart.Data) series0.getData().get(i);
             String value = series0.getData().get(i).getXValue().toString();
             Tooltip.install(item.getNode(), new Tooltip("Anzahl Drafts: " + value));
@@ -94,10 +97,15 @@ public class Main extends Application {
     }
 
     public Parent createAbsoluteChart() {
-        final String[] countryNames = new String[DataModel.getAllCountries().size()];
+        //final String[] countryNames = new String[DataModel.getAllCountries().size()];
+        final String[] countryNames = new String[DataModel.getAllCountriesFiltered().size()];
 
-        for (int i = 0; i <= DataModel.getAllCountries().size() - 1; i++) {
-            countryNames[i] = DataModel.getAllCountries().get(i).getCountryName();
+
+//        for (int i = 0; i <= DataModel.getAllCountries().size() - 1; i++) {
+//            countryNames[i] = DataModel.getAllCountries().get(i).getCountryName();
+//        }
+        for (int i = 0; i <= DataModel.getAllCountriesFiltered().size() - 1; i++) {
+            countryNames[i] = DataModel.getAllCountriesFiltered().get(i).getCountryName();
         }
 
         CategoryAxis xAchse = new CategoryAxis();
@@ -118,17 +126,17 @@ public class Main extends Application {
         for (int i = 0; i <= countryNames.length - 1; i++) {
             int counter = 0;
             for (Player p : DataModel.getAllPlayersFiltered()) {
-                if (p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountries().get(i).getCountryName())) {
+                if (p.getPlayerCountry().getCountryName().equals(DataModel.getAllCountriesFiltered().get(i).getCountryName())) {
                     counter++;
                 }
             }
-            XYChart.Data d = new XYChart.Data<Number, String>(counter, DataModel.getAllCountries().get(i).getCountryName());
+            XYChart.Data d = new XYChart.Data<Number, String>(counter, DataModel.getAllCountriesFiltered().get(i).getCountryName());
             series1.getData().add(d);
         }
         chartAbsolute.getData().add(series1);
 
         // tooltip
-        for (int i = 0; i <= 21; i++) {
+        for (int i = 0; i <= countryNames.length-1; i++) {
             XYChart.Data item = (XYChart.Data) series1.getData().get(i);
             String value = series1.getData().get(i).getXValue().toString();
             Tooltip.install(item.getNode(), new Tooltip("Anzahl Drafts: " + value));
@@ -189,7 +197,7 @@ public class Main extends Application {
         upperBoundSlider.setShowTickMarks(true);
         upperBoundSlider.valueProperty().bindBidirectional(DataModel.upperBoundFilterProperty());
 
-        area.getChildren().addAll(boundsTitle,lowerBoundLabel,lowerBoundSlider,upperBoundLabel,upperBoundSlider);
+        area.getChildren().addAll(boundsTitle, lowerBoundLabel, lowerBoundSlider, upperBoundLabel, upperBoundSlider);
 
         return area;
     }
@@ -203,7 +211,7 @@ public class Main extends Application {
 
         toggleSwitch = new ToggleSwitch(true);
 
-        toggleArea.getChildren().addAll(lblAbsolute,toggleSwitch, lblRelative);
+        toggleArea.getChildren().addAll(lblAbsolute, toggleSwitch, lblRelative);
 
         return toggleArea;
     }
@@ -219,14 +227,15 @@ public class Main extends Application {
         HBox boxCheckBoxes = new HBox();
         boxCheckBoxes.getStyleClass().add("check-boxes");
 
-        CheckBox cb1 = new CheckBox("Europa");
-        CheckBox cb2 = new CheckBox("Nordamerika");
-        CheckBox cb3 = new CheckBox("Andere");
+        checkBoxEurope = new CheckBox("Europa");
+        checkBoxEurope.setSelected(true);
+        checkBoxNorthAmerica = new CheckBox("Nordamerika");
+        checkBoxNorthAmerica.setSelected(true);
+        checkBoxOthers = new CheckBox("Andere");
+        checkBoxOthers.setSelected(true);
 
-        cb1.selectedProperty().addListener(e -> System.out.println("Hoi"));
-
-        boxCheckBoxes.getChildren().addAll(cb1,cb2,cb3);
-        filterContinentArea.getChildren().addAll(filterTitle,boxCheckBoxes);
+        boxCheckBoxes.getChildren().addAll(checkBoxEurope, checkBoxNorthAmerica, checkBoxOthers);
+        filterContinentArea.getChildren().addAll(filterTitle, boxCheckBoxes);
 
         return filterContinentArea;
     }
@@ -235,7 +244,7 @@ public class Main extends Application {
     public VBox createSideBar() {
         VBox sideBar = new VBox(15);
         sideBar.getStyleClass().add("sideBar");
-        sideBar.getChildren().addAll(setBoundariesArea(),toggleArea(),filterContinentArea());
+        sideBar.getChildren().addAll(setBoundariesArea(), toggleArea(), filterContinentArea());
         return sideBar;
     }
 
@@ -254,7 +263,7 @@ public class Main extends Application {
         //get Sceen-size
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
         //set size of window
-        Scene scene = new Scene(frame, primaryScreenBounds.getWidth()/3*2.2, primaryScreenBounds.getHeight()-40);
+        Scene scene = new Scene(frame, primaryScreenBounds.getWidth() / 3 * 2.2, primaryScreenBounds.getHeight() - 40);
 
         //link stylesheet
         scene.getStylesheets().add("stylesheet.css");
@@ -268,16 +277,81 @@ public class Main extends Application {
     }
 
     public void updateChart() {
-        if(isAbsolute){
+        if (isAbsolute) {
             frame.setCenter(createAbsoluteChart());
-        }
-        else{
+        } else {
             frame.setCenter(createRelativeChart());
         }
     }
 
-    public void setupChangeListener(){
-        DataModel.getAllPlayersFiltered().addListener((ListChangeListener)(c -> {
+    public void updateCountriesFilter() {
+        if (checkBoxEurope.isSelected() && checkBoxNorthAmerica.isSelected() && checkBoxOthers.isSelected()) {
+            DataModel.getAllCountriesFiltered().setPredicate(country -> {
+                return
+                        (country.getContinentName().equals("Europe") ||
+                                country.getContinentName().equals("North America") ||
+                                country.getContinentName().equals("South America") ||
+                                country.getContinentName().equals("Australia") ||
+                                country.getContinentName().equals("Asia") ||
+                                country.getContinentName().equals("Africa"));
+
+            });
+        } else if (checkBoxEurope.isSelected() && checkBoxNorthAmerica.isSelected() && !checkBoxOthers.isSelected()) {
+            DataModel.getAllCountriesFiltered().setPredicate(country -> {
+                return
+                        (country.getContinentName().equals("Europe") ||
+                                country.getContinentName().equals("North America"));
+
+            });
+        } else if (checkBoxEurope.isSelected() && !checkBoxNorthAmerica.isSelected() && checkBoxOthers.isSelected()) {
+            DataModel.getAllCountriesFiltered().setPredicate(country -> {
+                return
+                        (country.getContinentName().equals("Europe") ||
+                                country.getContinentName().equals("South America") ||
+                                country.getContinentName().equals("Australia") ||
+                                country.getContinentName().equals("Asia") ||
+                                country.getContinentName().equals("Africa"));
+
+            });
+        } else if (checkBoxEurope.isSelected() && !checkBoxNorthAmerica.isSelected() && !checkBoxOthers.isSelected()) {
+            DataModel.getAllCountriesFiltered().setPredicate(country -> {
+                return
+                        (country.getContinentName().equals("Europe"));
+
+            });
+        } else if (!checkBoxEurope.isSelected() && checkBoxNorthAmerica.isSelected() && checkBoxOthers.isSelected()) {
+            DataModel.getAllCountriesFiltered().setPredicate(country -> {
+                return
+                        (country.getContinentName().equals("North America") ||
+                                country.getContinentName().equals("South America") ||
+                                country.getContinentName().equals("Australia") ||
+                                country.getContinentName().equals("Asia") ||
+                                country.getContinentName().equals("Africa"));
+
+            });
+        } else if (!checkBoxEurope.isSelected() && checkBoxNorthAmerica.isSelected() && !checkBoxOthers.isSelected()) {
+            DataModel.getAllCountriesFiltered().setPredicate(country -> {
+                return
+                        (country.getContinentName().equals("North America"));
+
+            });
+        } else if (!checkBoxEurope.isSelected() && !checkBoxNorthAmerica.isSelected() && checkBoxOthers.isSelected()) {
+            DataModel.getAllCountriesFiltered().setPredicate(country -> {
+                return
+                        (country.getContinentName().equals("South America") ||
+                                country.getContinentName().equals("Australia") ||
+                                country.getContinentName().equals("Asia") ||
+                                country.getContinentName().equals("Africa"));
+
+            });
+        } else if (!checkBoxEurope.isSelected() && !checkBoxNorthAmerica.isSelected() && !checkBoxOthers.isSelected()) {
+            //TODO: do sth when nothing is selected
+        }
+    }
+
+
+    public void setupChangeListener() {
+        DataModel.getAllPlayersFiltered().addListener((ListChangeListener) (c -> {
             updateChart();
         }));
 
@@ -285,6 +359,15 @@ public class Main extends Application {
             isAbsolute = newValue;
             updateChart();
         });
+
+        checkBoxEurope.selectedProperty().addListener(event -> updateCountriesFilter());
+        checkBoxNorthAmerica.selectedProperty().addListener(event -> updateCountriesFilter());
+        checkBoxOthers.selectedProperty().addListener(event -> updateCountriesFilter());
+
+        DataModel.getAllCountriesFiltered().addListener((ListChangeListener) (c -> {
+            updateChart();
+        }));
+
     }
 }
 

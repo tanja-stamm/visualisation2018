@@ -4,6 +4,8 @@ import Service.ServiceAsList;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
@@ -29,7 +31,10 @@ public class DataModel {
     private static List<Country> allCountriesList = new ArrayList<>();
     private static final ObservableList<Country> allCountries = FXCollections.observableList(allCountriesList);
 
+    private static final FilteredList<Country> allCountriesFiltered = new FilteredList<>(allCountries);
 
+    //Filter
+    private static final StringProperty countryFilter = new SimpleStringProperty();
 
 
     //------------------------------------------Custom Methods----------------------------------------------------------
@@ -41,6 +46,9 @@ public class DataModel {
 
     public static void setupValueChangedListener() {
 
+        getAllCountriesFiltered().addListener((ListChangeListener) (c -> {
+            printAllFilteredCountries();
+        }));
 
         lowerBoundFilter.addListener(((observable, oldValue, newValue) -> {
             System.out.println("new lower bound: "+ newValue);
@@ -83,7 +91,7 @@ public class DataModel {
         System.out.println("------------------------------------");
         System.out.println("all Countries:");
         for (Country c : allCountries) {
-            System.out.println(c.getCountryName());
+            System.out.println(c.getCountryName() + ", " + c.getContinentName());
         }
     }
 
@@ -94,6 +102,14 @@ public class DataModel {
             System.out.println(p.getPlayerName() + " " + p.getDraftYear() + " " + p.getPlayerCountry().getCountryName());
         }
 
+    }
+
+    public static void printAllFilteredCountries() {
+        System.out.println("------------------------------------");
+        System.out.println("AllFilteredCountries list: ");
+        for (Country c : getAllCountriesFiltered()) {
+            System.out.println(c.getCountryName() + ", " + c.getContinentName());
+        }
     }
 
 
@@ -134,5 +150,21 @@ public class DataModel {
 
     public static ObservableList<Country> getAllCountries() {
         return allCountries;
+    }
+
+    public static FilteredList<Country> getAllCountriesFiltered() {
+        return allCountriesFiltered;
+    }
+
+    public static String getCountryFilter() {
+        return countryFilter.get();
+    }
+
+    public static StringProperty countryFilterProperty() {
+        return countryFilter;
+    }
+
+    public static void setCountryFilter(String countryFilter) {
+        DataModel.countryFilter.set(countryFilter);
     }
 }

@@ -26,11 +26,9 @@ public class ServiceAsList {
                 String[] countryComponents = line.split(";");
 
                 //create Country-Object
-                Country newCountry = new Country(countryComponents[0], Integer.parseInt(countryComponents[1]));
+                Country newCountry = new Country(countryComponents[0], Integer.parseInt(countryComponents[1]), countryComponents[2]);
                 DataModel.getAllCountries().add(newCountry);
-
             }
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
