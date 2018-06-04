@@ -41,6 +41,8 @@ public class Main extends Application {
 
     private boolean chartModeBereinigt = false;
 
+
+
     public Parent createRelativeChart() {
         final String[] countryNames = new String[DataModel.getAllCountriesFiltered().size()];
 
@@ -54,7 +56,7 @@ public class Main extends Application {
         yAchse.setLabel("Land");
         xAchse.setCategories(FXCollections.<String>observableArrayList(Arrays
                 .asList(countryNames)));
-        yAchse.setLabel("Anzahl Drafts");
+        yAchse.setLabel("Anzahl Drafts pro Million Einwohner");
 
         // add starting data
         XYChart.Series<Number, String> series0 = new XYChart.Series<>();
@@ -97,13 +99,8 @@ public class Main extends Application {
     }
 
     public Parent createAbsoluteChart() {
-        //final String[] countryNames = new String[DataModel.getAllCountries().size()];
         final String[] countryNames = new String[DataModel.getAllCountriesFiltered().size()];
 
-
-//        for (int i = 0; i <= DataModel.getAllCountries().size() - 1; i++) {
-//            countryNames[i] = DataModel.getAllCountries().get(i).getCountryName();
-//        }
         for (int i = 0; i <= DataModel.getAllCountriesFiltered().size() - 1; i++) {
             countryNames[i] = DataModel.getAllCountriesFiltered().get(i).getCountryName();
         }

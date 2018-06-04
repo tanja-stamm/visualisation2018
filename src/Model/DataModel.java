@@ -114,8 +114,6 @@ public class DataModel {
 
 
     //-----------------------------------Getter & Setter----------------------------------------------------------------
-
-
     public static ObservableList<Player> getAllPlayers() {
         return allPlayers;
     }
